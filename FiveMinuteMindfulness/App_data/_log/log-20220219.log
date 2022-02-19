@@ -1,0 +1,693 @@
+2022-02-19 18:43:39.989 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-02-19 18:43:40.196 +02:00 [INF] Entity Framework Core 6.0.2 initialized 'FiveMinutesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: MigrationsAssembly=FiveMinuteMindfulness.Data 
+2022-02-19 18:43:40.235 +02:00 [DBG] Migrating using database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:43:40.243 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:47.664 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-02-19 18:47:47.883 +02:00 [INF] Entity Framework Core 6.0.2 initialized 'FiveMinutesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: MigrationsAssembly=FiveMinuteMindfulness.Data 
+2022-02-19 18:47:47.921 +02:00 [DBG] Migrating using database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:47.928 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.087 +02:00 [DBG] An error occurred using the connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.089 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.091 +02:00 [DBG] An error occurred using the connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.120 +02:00 [DBG] Opening connection to database 'master' on server 'localhost'.
+2022-02-19 18:47:48.147 +02:00 [DBG] Opened connection to database 'master' on server 'localhost'.
+2022-02-19 18:47:48.155 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 18:47:48.161 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (5ms).
+2022-02-19 18:47:48.173 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [fiveminutes];
+2022-02-19 18:47:48.567 +02:00 [INF] Executed DbCommand (388ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [fiveminutes];
+2022-02-19 18:47:48.572 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 18:47:48.573 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2022-02-19 18:47:48.575 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [fiveminutes] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2022-02-19 18:47:48.783 +02:00 [INF] Executed DbCommand (209ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [fiveminutes] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2022-02-19 18:47:48.788 +02:00 [DBG] Closing connection to database 'master' on server 'localhost'.
+2022-02-19 18:47:48.795 +02:00 [DBG] Closed connection to database 'master' on server 'localhost'.
+2022-02-19 18:47:48.799 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.813 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.815 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 18:47:48.816 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2022-02-19 18:47:48.818 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 18:47:48.828 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 18:47:48.831 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:48.833 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.047 +02:00 [DBG] DetectChanges starting for 'FiveMinutesContext'.
+2022-02-19 18:47:49.051 +02:00 [DBG] DetectChanges completed for 'FiveMinutesContext'.
+2022-02-19 18:47:49.060 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 18:47:49.064 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2022-02-19 18:47:49.066 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.068 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.069 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2022-02-19 18:47:49.083 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2022-02-19 18:47:49.087 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.089 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.091 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.093 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.095 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 18:47:49.096 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2022-02-19 18:47:49.098 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 18:47:49.102 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 18:47:49.105 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.108 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.114 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2022-02-19 18:47:49.116 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2022-02-19 18:47:49.118 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.119 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.121 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-19 18:47:49.137 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-19 18:47:49.141 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.144 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.146 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2022-02-19 18:47:49.147 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2022-02-19 18:47:49.149 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.150 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.152 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-19 18:47:49.160 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-19 18:47:49.164 +02:00 [DBG] A data reader was disposed.
+2022-02-19 18:47:49.165 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.167 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 18:47:49.177 +02:00 [DBG] No migrations were found in assembly 'FiveMinuteMindfulness.Data'.
+2022-02-19 18:47:49.181 +02:00 [INF] No migrations were applied. The database is already up to date.
+2022-02-19 18:47:49.183 +02:00 [DBG] 'FiveMinutesContext' disposed.
+2022-02-19 18:47:49.211 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2022-02-19 18:47:49.214 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Privacy.cshtml'.
+2022-02-19 18:47:49.215 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2022-02-19 18:47:49.216 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ValidationScriptsPartial.cshtml'.
+2022-02-19 18:47:49.218 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2022-02-19 18:47:49.219 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2022-02-19 18:47:49.220 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2022-02-19 18:47:49.230 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-02-19 18:47:49.268 +02:00 [DBG] Hosting starting
+2022-02-19 18:47:49.278 +02:00 [INF] User profile is available. Using 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-19 18:47:49.283 +02:00 [DBG] Reading data from file 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys\key-72990e65-51e3-43fe-a186-b60c6e57db11.xml'.
+2022-02-19 18:47:49.292 +02:00 [DBG] Found key {72990e65-51e3-43fe-a186-b60c6e57db11}.
+2022-02-19 18:47:49.302 +02:00 [DBG] Considering key {72990e65-51e3-43fe-a186-b60c6e57db11} with expiration date 2021-10-21 15:31:49Z as default key.
+2022-02-19 18:47:49.304 +02:00 [DBG] Key {72990e65-51e3-43fe-a186-b60c6e57db11} is no longer under consideration as default key because it is expired, revoked, or cannot be deciphered.
+2022-02-19 18:47:49.308 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.17.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-19 18:47:49.310 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2022-02-19 18:47:49.312 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.17.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-19 18:47:49.315 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2022-02-19 18:47:49.317 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2022-02-19 18:47:49.320 +02:00 [DBG] Repository contains no viable default key. Caller should generate a key with immediate activation.
+2022-02-19 18:47:49.321 +02:00 [DBG] Policy resolution states that a new key should be added to the key ring.
+2022-02-19 18:47:49.325 +02:00 [INF] Creating key {dc43d9ae-3e36-4671-a41a-425a1962b13f} with creation date 2022-02-19 16:47:49Z, activation date 2022-02-19 16:47:49Z, and expiration date 2022-05-20 16:47:49Z.
+2022-02-19 18:47:49.333 +02:00 [DBG] Descriptor deserializer type for key {dc43d9ae-3e36-4671-a41a-425a1962b13f} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+2022-02-19 18:47:49.336 +02:00 [DBG] No key escrow sink found. Not writing key {dc43d9ae-3e36-4671-a41a-425a1962b13f} to escrow.
+2022-02-19 18:47:49.341 +02:00 [DBG] Encrypting to Windows DPAPI for current user account (SEEKER-OMEN\M).
+2022-02-19 18:47:49.345 +02:00 [INF] Writing data to file 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys\key-dc43d9ae-3e36-4671-a41a-425a1962b13f.xml'.
+2022-02-19 18:47:49.347 +02:00 [DBG] Key cache expiration token triggered by 'CreateNewKey' operation.
+2022-02-19 18:47:49.348 +02:00 [DBG] Reading data from file 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys\key-72990e65-51e3-43fe-a186-b60c6e57db11.xml'.
+2022-02-19 18:47:49.349 +02:00 [DBG] Reading data from file 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys\key-dc43d9ae-3e36-4671-a41a-425a1962b13f.xml'.
+2022-02-19 18:47:49.351 +02:00 [DBG] Found key {72990e65-51e3-43fe-a186-b60c6e57db11}.
+2022-02-19 18:47:49.352 +02:00 [DBG] Found key {dc43d9ae-3e36-4671-a41a-425a1962b13f}.
+2022-02-19 18:47:49.354 +02:00 [DBG] Considering key {dc43d9ae-3e36-4671-a41a-425a1962b13f} with expiration date 2022-05-20 16:47:49Z as default key.
+2022-02-19 18:47:49.355 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-19 18:47:49.357 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2022-02-19 18:47:49.360 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-19 18:47:49.362 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2022-02-19 18:47:49.364 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2022-02-19 18:47:49.365 +02:00 [DBG] Using key {dc43d9ae-3e36-4671-a41a-425a1962b13f} as the default key.
+2022-02-19 18:47:49.367 +02:00 [DBG] Key ring with default key {dc43d9ae-3e36-4671-a41a-425a1962b13f} was loaded during application startup.
+2022-02-19 18:47:49.398 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 9AC930013CEED756731ED4472D862588261B8DEE)
+2022-02-19 18:47:49.421 +02:00 [INF] Now listening on: https://localhost:7215
+2022-02-19 18:47:49.423 +02:00 [INF] Now listening on: http://localhost:5215
+2022-02-19 18:47:49.425 +02:00 [DBG] Loaded hosting startup assembly FiveMinuteMindfulness
+2022-02-19 18:47:49.426 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-19 18:47:49.427 +02:00 [INF] Hosting environment: Development
+2022-02-19 18:47:49.428 +02:00 [INF] Content root path: D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\
+2022-02-19 18:47:49.429 +02:00 [DBG] Hosting started
+2022-02-19 18:47:49.439 +02:00 [DBG] Connection id "0HMFJOU84I8PP" received FIN.
+2022-02-19 18:47:49.444 +02:00 [DBG] Connection id "0HMFJOU84I8PP" accepted.
+2022-02-19 18:47:49.447 +02:00 [DBG] Connection id "0HMFJOU84I8PP" started.
+2022-02-19 18:47:49.458 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-02-19 18:47:49.475 +02:00 [DBG] Connection id "0HMFJOU84I8PP" stopped.
+2022-02-19 18:47:49.478 +02:00 [DBG] Connection id "0HMFJOU84I8PP" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-19 18:47:49.609 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" accepted.
+2022-02-19 18:47:49.612 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" started.
+2022-02-19 18:47:49.660 +02:00 [DBG] Connection 0HMFJOU84I8PQ established using the following protocol: "Tls12"
+2022-02-19 18:47:49.693 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/ - -
+2022-02-19 18:47:49.696 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-02-19 18:47:49.698 +02:00 [DBG] The request path / does not match a supported file type
+2022-02-19 18:47:49.713 +02:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-19 18:47:49.717 +02:00 [DBG] Endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-19 18:47:49.721 +02:00 [DBG] Request matched endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 18:47:49.724 +02:00 [INF] Executing endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 18:47:49.741 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness).
+2022-02-19 18:47:49.745 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-19 18:47:49.748 +02:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 18:47:49.750 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-19 18:47:49.752 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-19 18:47:49.754 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 18:47:49.756 +02:00 [DBG] Executing controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 18:47:49.758 +02:00 [DBG] Executed controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 18:47:49.763 +02:00 [DBG] View lookup cache miss for view 'Index' in controller 'Home'.
+2022-02-19 18:47:49.771 +02:00 [INF] Executing ViewResult, running view Index.
+2022-02-19 18:47:49.776 +02:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 10.3904ms.
+2022-02-19 18:47:49.793 +02:00 [DBG] View lookup cache miss for view '_Layout' in controller 'Home'.
+2022-02-19 18:47:49.819 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:49.826 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 18:47:49.829 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 18:47:49.832 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:49.833 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 18:47:49.835 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 18:47:49.837 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:49.839 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 18:47:49.842 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 18:47:49.845 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:49.847 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 18:47:49.849 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 18:47:49.858 +02:00 [INF] Executed ViewResult - view Index executed in 95.1927ms.
+2022-02-19 18:47:49.860 +02:00 [INF] Executed action FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness) in 104.9191ms
+2022-02-19 18:47:49.862 +02:00 [INF] Executed endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 18:47:49.864 +02:00 [INF] HTTP GET / responded 200 in 139.7712 ms
+2022-02-19 18:47:49.868 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/ - - - 200 - text/html;+charset=utf-8 177.8971ms
+2022-02-19 18:47:49.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - -
+2022-02-19 18:47:49.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/css/bootstrap.min.css - -
+2022-02-19 18:47:49.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/FiveMinuteMindfulness.styles.css?v=OVy1XzK-L_U8KpTRMT7AMxAI7k7NA47V7NEDqb6ufcs - -
+2022-02-19 18:47:49.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/lib/jquery/dist/jquery.min.js - -
+2022-02-19 18:47:49.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2022-02-19 18:47:49.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2022-02-19 18:47:49.936 +02:00 [INF] Sending file. Request path: '/FiveMinuteMindfulness.styles.css'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\obj\Debug\net6.0\scopedcss\bundle\FiveMinuteMindfulness.styles.css'
+2022-02-19 18:47:49.936 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\css\site.css'
+2022-02-19 18:47:49.942 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\js\site.js'
+2022-02-19 18:47:49.943 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\lib\jquery\dist\jquery.min.js'
+2022-02-19 18:47:49.943 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2022-02-19 18:47:49.943 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2022-02-19 18:47:49.944 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/FiveMinuteMindfulness.styles.css?v=OVy1XzK-L_U8KpTRMT7AMxAI7k7NA47V7NEDqb6ufcs - - - 200 1138 text/css 19.3984ms
+2022-02-19 18:47:49.946 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - - - 200 194 text/css 21.4442ms
+2022-02-19 18:47:49.949 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 200 230 application/javascript 23.8223ms
+2022-02-19 18:47:49.952 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/lib/jquery/dist/jquery.min.js - - - 200 89478 application/javascript 26.9961ms
+2022-02-19 18:47:49.954 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 200 78474 application/javascript 28.8808ms
+2022-02-19 18:47:49.955 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/css/bootstrap.min.css - - - 200 162726 text/css 30.8742ms
+2022-02-19 18:47:50.450 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/favicon.ico - -
+2022-02-19 18:47:50.452 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\favicon.ico'
+2022-02-19 18:47:50.455 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/favicon.ico - - - 200 5430 image/x-icon 5.0040ms
+2022-02-19 18:47:56.720 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/ - -
+2022-02-19 18:47:56.723 +02:00 [DBG] The request path / does not match a supported file type
+2022-02-19 18:47:56.724 +02:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-19 18:47:56.725 +02:00 [DBG] Endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-19 18:47:56.727 +02:00 [DBG] Request matched endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 18:47:56.728 +02:00 [INF] Executing endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 18:47:56.729 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness).
+2022-02-19 18:47:56.731 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-19 18:47:56.734 +02:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 18:47:56.736 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-19 18:47:56.738 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-19 18:47:56.740 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 18:47:56.742 +02:00 [DBG] Executing controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 18:47:56.743 +02:00 [DBG] Executed controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 18:47:56.745 +02:00 [DBG] View lookup cache hit for view 'Index' in controller 'Home'.
+2022-02-19 18:47:56.746 +02:00 [INF] Executing ViewResult, running view Index.
+2022-02-19 18:47:56.747 +02:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 2.6812ms.
+2022-02-19 18:47:56.751 +02:00 [DBG] View lookup cache hit for view '_Layout' in controller 'Home'.
+2022-02-19 18:47:56.754 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:56.756 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 18:47:56.757 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 18:47:56.759 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:56.761 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 18:47:56.766 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 18:47:56.768 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:56.769 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 18:47:56.771 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 18:47:56.774 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:56.776 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 18:47:56.778 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 18:47:56.782 +02:00 [INF] Executed ViewResult - view Index executed in 37.0582ms.
+2022-02-19 18:47:56.784 +02:00 [INF] Executed action FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness) in 41.7923ms
+2022-02-19 18:47:56.785 +02:00 [INF] Executed endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 18:47:56.787 +02:00 [INF] HTTP GET / responded 200 in 58.7538 ms
+2022-02-19 18:47:56.789 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/ - - - 200 - text/html;+charset=utf-8 68.5513ms
+2022-02-19 18:47:57.838 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/Home/Privacy - -
+2022-02-19 18:47:57.841 +02:00 [DBG] The request path /Home/Privacy does not match a supported file type
+2022-02-19 18:47:57.851 +02:00 [DBG] 1 candidate(s) found for the request path '/Home/Privacy'
+2022-02-19 18:47:57.854 +02:00 [DBG] Endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Privacy (FiveMinuteMindfulness)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/Home/Privacy'
+2022-02-19 18:47:57.858 +02:00 [DBG] Request matched endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Privacy (FiveMinuteMindfulness)'
+2022-02-19 18:47:57.859 +02:00 [INF] Executing endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Privacy (FiveMinuteMindfulness)'
+2022-02-19 18:47:57.861 +02:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Privacy() on controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness).
+2022-02-19 18:47:57.863 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-19 18:47:57.866 +02:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 18:47:57.871 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-19 18:47:57.873 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-19 18:47:57.875 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 18:47:57.877 +02:00 [DBG] Executing controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 18:47:57.878 +02:00 [DBG] Executed controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 18:47:57.879 +02:00 [DBG] View lookup cache miss for view 'Privacy' in controller 'Home'.
+2022-02-19 18:47:57.883 +02:00 [INF] Executing ViewResult, running view Privacy.
+2022-02-19 18:47:57.884 +02:00 [DBG] The view path '/Views/Home/Privacy.cshtml' was found in 4.9934ms.
+2022-02-19 18:47:57.887 +02:00 [DBG] View lookup cache hit for view '_Layout' in controller 'Home'.
+2022-02-19 18:47:57.889 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:57.891 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 18:47:57.893 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 18:47:57.894 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:57.896 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 18:47:57.900 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 18:47:57.902 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:57.903 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 18:47:57.905 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 18:47:57.906 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 18:47:57.908 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 18:47:57.910 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 18:47:57.912 +02:00 [INF] Executed ViewResult - view Privacy executed in 32.3053ms.
+2022-02-19 18:47:57.915 +02:00 [INF] Executed action FiveMinuteMindfulness.Controllers.HomeController.Privacy (FiveMinuteMindfulness) in 38.403ms
+2022-02-19 18:47:57.917 +02:00 [INF] Executed endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Privacy (FiveMinuteMindfulness)'
+2022-02-19 18:47:57.918 +02:00 [INF] HTTP GET /Home/Privacy responded 200 in 59.5252 ms
+2022-02-19 18:47:57.920 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/Home/Privacy - - - 200 - text/html;+charset=utf-8 82.4525ms
+2022-02-19 18:49:15.290 +02:00 [INF] Application is shutting down...
+2022-02-19 18:49:15.291 +02:00 [DBG] Hosting stopping
+2022-02-19 18:49:15.298 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" is closing.
+2022-02-19 18:49:15.299 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" is closed. The last processed stream ID was 19.
+2022-02-19 18:49:15.302 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" received FIN.
+2022-02-19 18:49:15.303 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" sending FIN because: "The client closed the connection."
+2022-02-19 18:49:15.309 +02:00 [DBG] Connection id "0HMFJOU84I8PQ" stopped.
+2022-02-19 18:49:15.318 +02:00 [DBG] Hosting stopped
+2022-02-19 20:55:05.119 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-02-19 20:55:05.333 +02:00 [INF] Entity Framework Core 6.0.2 initialized 'FiveMinutesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: MigrationsAssembly=FiveMinuteMindfulness.Data 
+2022-02-19 20:55:05.368 +02:00 [DBG] Migrating using database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.375 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.531 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.540 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 20:55:05.547 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (5ms).
+2022-02-19 20:55:05.555 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 20:55:05.577 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 20:55:05.581 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.585 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.592 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2022-02-19 20:55:05.595 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2022-02-19 20:55:05.597 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.599 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.600 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-19 20:55:05.617 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-19 20:55:05.620 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.622 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.625 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.626 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.628 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2022-02-19 20:55:05.629 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2022-02-19 20:55:05.630 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 20:55:05.636 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-02-19 20:55:05.641 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.643 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.645 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2022-02-19 20:55:05.646 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2022-02-19 20:55:05.648 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.649 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.651 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-19 20:55:05.655 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-19 20:55:05.658 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.659 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.828 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2022-02-19 20:55:05.830 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2022-02-19 20:55:05.832 +02:00 [DBG] Opening connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.834 +02:00 [DBG] Opened connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.835 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-19 20:55:05.841 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-19 20:55:05.848 +02:00 [DBG] A data reader was disposed.
+2022-02-19 20:55:05.849 +02:00 [DBG] Closing connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.851 +02:00 [DBG] Closed connection to database 'fiveminutes' on server 'localhost'.
+2022-02-19 20:55:05.858 +02:00 [DBG] No migrations were found in assembly 'FiveMinuteMindfulness.Data'.
+2022-02-19 20:55:05.863 +02:00 [INF] No migrations were applied. The database is already up to date.
+2022-02-19 20:55:05.865 +02:00 [DBG] 'FiveMinutesContext' disposed.
+2022-02-19 20:55:05.881 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2022-02-19 20:55:05.883 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Privacy.cshtml'.
+2022-02-19 20:55:05.884 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2022-02-19 20:55:05.886 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ValidationScriptsPartial.cshtml'.
+2022-02-19 20:55:05.887 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2022-02-19 20:55:05.888 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2022-02-19 20:55:05.890 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2022-02-19 20:55:05.893 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/AccessDenied.cshtml'.
+2022-02-19 20:55:05.894 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ConfirmEmail.cshtml'.
+2022-02-19 20:55:05.895 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml'.
+2022-02-19 20:55:05.896 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ExternalLogin.cshtml'.
+2022-02-19 20:55:05.898 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ForgotPassword.cshtml'.
+2022-02-19 20:55:05.899 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml'.
+2022-02-19 20:55:05.900 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Lockout.cshtml'.
+2022-02-19 20:55:05.901 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Login.cshtml'.
+2022-02-19 20:55:05.903 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/LoginWith2fa.cshtml'.
+2022-02-19 20:55:05.904 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml'.
+2022-02-19 20:55:05.905 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Logout.cshtml'.
+2022-02-19 20:55:05.910 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml'.
+2022-02-19 20:55:05.911 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml'.
+2022-02-19 20:55:05.912 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml'.
+2022-02-19 20:55:05.913 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml'.
+2022-02-19 20:55:05.915 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/Email.cshtml'.
+2022-02-19 20:55:05.916 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml'.
+2022-02-19 20:55:05.917 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml'.
+2022-02-19 20:55:05.919 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml'.
+2022-02-19 20:55:05.920 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/Index.cshtml'.
+2022-02-19 20:55:05.921 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml'.
+2022-02-19 20:55:05.925 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml'.
+2022-02-19 20:55:05.926 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml'.
+2022-02-19 20:55:05.927 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml'.
+2022-02-19 20:55:05.928 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml'.
+2022-02-19 20:55:05.930 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/_Layout.cshtml'.
+2022-02-19 20:55:05.931 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml'.
+2022-02-19 20:55:05.932 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml'.
+2022-02-19 20:55:05.933 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml'.
+2022-02-19 20:55:05.935 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Manage/_ViewStart.cshtml'.
+2022-02-19 20:55:05.936 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/Register.cshtml'.
+2022-02-19 20:55:05.937 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml'.
+2022-02-19 20:55:05.941 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml'.
+2022-02-19 20:55:05.943 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ResetPassword.cshtml'.
+2022-02-19 20:55:05.944 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml'.
+2022-02-19 20:55:05.946 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/_StatusMessage.cshtml'.
+2022-02-19 20:55:05.947 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Account/_ViewImports.cshtml'.
+2022-02-19 20:55:05.948 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/Error.cshtml'.
+2022-02-19 20:55:05.949 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/_Layout.cshtml'.
+2022-02-19 20:55:05.950 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml'.
+2022-02-19 20:55:05.952 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/_ViewImports.cshtml'.
+2022-02-19 20:55:05.953 +02:00 [DBG] Initializing Razor view compiler with compiled view: '/Areas/Identity/Pages/_ViewStart.cshtml'.
+2022-02-19 20:55:05.964 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-02-19 20:55:05.984 +02:00 [INF] User profile is available. Using 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-19 20:55:06.040 +02:00 [DBG] Hosting starting
+2022-02-19 20:55:06.043 +02:00 [DBG] Reading data from file 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys\key-72990e65-51e3-43fe-a186-b60c6e57db11.xml'.
+2022-02-19 20:55:06.045 +02:00 [DBG] Reading data from file 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys\key-dc43d9ae-3e36-4671-a41a-425a1962b13f.xml'.
+2022-02-19 20:55:06.050 +02:00 [DBG] Found key {72990e65-51e3-43fe-a186-b60c6e57db11}.
+2022-02-19 20:55:06.054 +02:00 [DBG] Found key {dc43d9ae-3e36-4671-a41a-425a1962b13f}.
+2022-02-19 20:55:06.060 +02:00 [DBG] Considering key {dc43d9ae-3e36-4671-a41a-425a1962b13f} with expiration date 2022-05-20 16:47:49Z as default key.
+2022-02-19 20:55:06.064 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-19 20:55:06.068 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2022-02-19 20:55:06.070 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-19 20:55:06.072 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2022-02-19 20:55:06.076 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2022-02-19 20:55:06.079 +02:00 [DBG] Using key {dc43d9ae-3e36-4671-a41a-425a1962b13f} as the default key.
+2022-02-19 20:55:06.083 +02:00 [DBG] Key ring with default key {dc43d9ae-3e36-4671-a41a-425a1962b13f} was loaded during application startup.
+2022-02-19 20:55:06.111 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 9AC930013CEED756731ED4472D862588261B8DEE)
+2022-02-19 20:55:06.134 +02:00 [INF] Now listening on: https://localhost:7215
+2022-02-19 20:55:06.136 +02:00 [INF] Now listening on: http://localhost:5215
+2022-02-19 20:55:06.137 +02:00 [DBG] Loaded hosting startup assembly FiveMinuteMindfulness
+2022-02-19 20:55:06.138 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-19 20:55:06.139 +02:00 [INF] Hosting environment: Development
+2022-02-19 20:55:06.140 +02:00 [INF] Content root path: D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\
+2022-02-19 20:55:06.141 +02:00 [DBG] Hosting started
+2022-02-19 20:55:06.177 +02:00 [DBG] Connection id "0HMFJR5C260HN" received FIN.
+2022-02-19 20:55:06.184 +02:00 [DBG] Connection id "0HMFJR5C260HN" accepted.
+2022-02-19 20:55:06.186 +02:00 [DBG] Connection id "0HMFJR5C260HN" started.
+2022-02-19 20:55:06.193 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2022-02-19 20:55:06.213 +02:00 [DBG] Connection id "0HMFJR5C260HN" stopped.
+2022-02-19 20:55:06.216 +02:00 [DBG] Connection id "0HMFJR5C260HN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-19 20:55:06.312 +02:00 [DBG] Connection id "0HMFJR5C260HO" accepted.
+2022-02-19 20:55:06.314 +02:00 [DBG] Connection id "0HMFJR5C260HO" started.
+2022-02-19 20:55:06.356 +02:00 [DBG] Connection 0HMFJR5C260HO established using the following protocol: "Tls12"
+2022-02-19 20:55:06.394 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/ - -
+2022-02-19 20:55:06.396 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-02-19 20:55:06.399 +02:00 [DBG] The request path / does not match a supported file type
+2022-02-19 20:55:06.414 +02:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-19 20:55:06.419 +02:00 [DBG] Endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-19 20:55:06.421 +02:00 [DBG] Request matched endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 20:55:06.424 +02:00 [INF] Executing endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 20:55:06.439 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness).
+2022-02-19 20:55:06.444 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-19 20:55:06.447 +02:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 20:55:06.449 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-19 20:55:06.451 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-19 20:55:06.453 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-19 20:55:06.455 +02:00 [DBG] Executing controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 20:55:06.456 +02:00 [DBG] Executed controller factory for controller FiveMinuteMindfulness.Controllers.HomeController (FiveMinuteMindfulness)
+2022-02-19 20:55:06.459 +02:00 [DBG] View lookup cache miss for view 'Index' in controller 'Home'.
+2022-02-19 20:55:06.463 +02:00 [INF] Executing ViewResult, running view Index.
+2022-02-19 20:55:06.468 +02:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 6.2926ms.
+2022-02-19 20:55:06.484 +02:00 [DBG] View lookup cache miss for view '_Layout' in controller 'Home'.
+2022-02-19 20:55:06.508 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 20:55:06.515 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 20:55:06.517 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 20:55:06.520 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 20:55:06.521 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-19 20:55:06.524 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-19 20:55:06.526 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 20:55:06.527 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 20:55:06.529 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 20:55:06.532 +02:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-19 20:55:06.534 +02:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Home/Privacy and 
+2022-02-19 20:55:06.535 +02:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Home/Privacy
+2022-02-19 20:55:06.543 +02:00 [INF] Executed ViewResult - view Index executed in 85.0407ms.
+2022-02-19 20:55:06.546 +02:00 [INF] Executed action FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness) in 91.6626ms
+2022-02-19 20:55:06.549 +02:00 [INF] Executed endpoint 'FiveMinuteMindfulness.Controllers.HomeController.Index (FiveMinuteMindfulness)'
+2022-02-19 20:55:06.551 +02:00 [INF] HTTP GET / responded 200 in 126.5161 ms
+2022-02-19 20:55:06.557 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/ - - - 200 - text/html;+charset=utf-8 168.0273ms
+2022-02-19 20:55:06.589 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/css/bootstrap.min.css - -
+2022-02-19 20:55:06.589 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - -
+2022-02-19 20:55:06.589 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/lib/jquery/dist/jquery.min.js - -
+2022-02-19 20:55:06.589 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2022-02-19 20:55:06.590 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/FiveMinuteMindfulness.styles.css?v=OVy1XzK-L_U8KpTRMT7AMxAI7k7NA47V7NEDqb6ufcs - -
+2022-02-19 20:55:06.590 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2022-02-19 20:55:06.594 +02:00 [INF] The file /css/site.css was not modified
+2022-02-19 20:55:06.594 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2022-02-19 20:55:06.598 +02:00 [INF] The file /FiveMinuteMindfulness.styles.css was not modified
+2022-02-19 20:55:06.600 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\js\site.js'
+2022-02-19 20:55:06.601 +02:00 [DBG] Handled. Status code: 304 File: /css/site.css
+2022-02-19 20:55:06.604 +02:00 [DBG] Handled. Status code: 304 File: /lib/bootstrap/dist/css/bootstrap.min.css
+2022-02-19 20:55:06.605 +02:00 [DBG] Handled. Status code: 304 File: /FiveMinuteMindfulness.styles.css
+2022-02-19 20:55:06.608 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 200 230 application/javascript 17.6768ms
+2022-02-19 20:55:06.608 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\lib\jquery\dist\jquery.min.js'
+2022-02-19 20:55:06.608 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2022-02-19 20:55:06.609 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - - - 304 - text/css 20.3035ms
+2022-02-19 20:55:06.611 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/css/bootstrap.min.css - - - 304 - text/css 21.6643ms
+2022-02-19 20:55:06.612 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/FiveMinuteMindfulness.styles.css?v=OVy1XzK-L_U8KpTRMT7AMxAI7k7NA47V7NEDqb6ufcs - - - 304 - text/css 22.2084ms
+2022-02-19 20:55:06.615 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/lib/jquery/dist/jquery.min.js - - - 200 89478 application/javascript 25.9912ms
+2022-02-19 20:55:06.616 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 200 78474 application/javascript 26.6817ms
+2022-02-19 20:55:07.111 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7215/favicon.ico - -
+2022-02-19 20:55:07.113 +02:00 [INF] The file /favicon.ico was not modified
+2022-02-19 20:55:07.116 +02:00 [DBG] Handled. Status code: 304 File: /favicon.ico
+2022-02-19 20:55:07.118 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7215/favicon.ico - - - 304 - image/x-icon 7.6443ms
+2022-02-19 20:57:19.191 +02:00 [DBG] Connection id "0HMFJR5C260HO" is closing.
+2022-02-19 20:57:19.194 +02:00 [DBG] Connection id "0HMFJR5C260HO" is closed. The last processed stream ID was 15.
+2022-02-19 20:57:19.196 +02:00 [DBG] Connection id "0HMFJR5C260HO" received FIN.
+2022-02-19 20:57:19.197 +02:00 [DBG] Connection id "0HMFJR5C260HO" stopped.
+2022-02-19 20:57:19.199 +02:00 [DBG] Connection id "0HMFJR5C260HO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-19 20:58:20.594 +02:00 [DBG] Config reload token fired. Checking for changes...
+2022-02-19 20:58:20.860 +02:00 [DBG] Config reload token fired. Checking for changes...
+2022-02-19 20:58:20.990 +02:00 [INF] Application is shutting down...
+2022-02-19 20:58:20.991 +02:00 [DBG] Hosting stopping
+2022-02-19 20:58:20.996 +02:00 [DBG] Hosting stopped
+2022-02-19 21:09:59.740 +02:00 [INF] HTTP GET / responded 200 in 59.4630 ms
+2022-02-19 21:10:43.039 +02:00 [INF] HTTP GET / responded 200 in 146.7577 ms
+2022-02-19 21:10:44.776 +02:00 [INF] HTTP GET / responded 200 in 7.5539 ms
+2022-02-19 21:10:46.976 +02:00 [INF] HTTP GET / responded 200 in 8.1762 ms
+2022-02-19 21:23:27.927 +02:00 [ERR] HTTP GET / responded 500 in 68.7836 ms
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.RenderPartialViewAsync(TextWriter writer, Object model, IView view)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__27_1() in D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\Views\Shared\_Layout.cshtml:line 0
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2022-02-19 21:23:27.994 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.RenderPartialViewAsync(TextWriter writer, Object model, IView view)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__27_1() in D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\Views\Shared\_Layout.cshtml:line 0
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-02-19 21:24:30.442 +02:00 [ERR] HTTP GET / responded 500 in 60.8638 ms
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.RenderPartialViewAsync(TextWriter writer, Object model, IView view)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__27_1() in D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\Views\Shared\_Layout.cshtml:line 0
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2022-02-19 21:24:30.515 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.RenderPartialViewAsync(TextWriter writer, Object model, IView view)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__27_1() in D:\Projects\C#\Mindfulness\FiveMinuteMindfulness\FiveMinuteMindfulness\Views\Shared\_Layout.cshtml:line 0
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-02-19 21:25:45.843 +02:00 [INF] HTTP GET / responded 200 in 149.2674 ms
+2022-02-19 21:25:47.628 +02:00 [INF] HTTP GET / responded 200 in 8.3253 ms
+2022-02-19 21:25:50.124 +02:00 [INF] HTTP GET / responded 200 in 10.1822 ms
+2022-02-19 21:27:05.124 +02:00 [INF] HTTP GET / responded 200 in 1.3729 ms
+2022-02-19 21:27:48.524 +02:00 [INF] HTTP GET / responded 200 in 147.5012 ms
+2022-02-19 21:27:51.767 +02:00 [INF] HTTP GET / responded 200 in 7.9275 ms
+2022-02-19 21:27:53.037 +02:00 [INF] HTTP GET / responded 200 in 8.6973 ms
+2022-02-19 21:27:57.757 +02:00 [INF] HTTP GET / responded 200 in 1.3388 ms
+2022-02-19 21:27:58.487 +02:00 [INF] HTTP GET / responded 200 in 1.0627 ms
+2022-02-19 21:31:11.723 +02:00 [INF] HTTP GET / responded 200 in 149.8571 ms
+2022-02-19 21:31:14.166 +02:00 [INF] HTTP GET / responded 200 in 7.7718 ms
+2022-02-19 21:31:54.846 +02:00 [INF] HTTP GET /Identity/Account/Register responded 404 in 0.0645 ms
+2022-02-19 21:34:24.346 +02:00 [INF] HTTP GET / responded 200 in 148.4081 ms
+2022-02-19 23:24:32.937 +02:00 [INF] HTTP GET / responded 200 in 152.3560 ms
