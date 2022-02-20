@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments</OriginalElement>
+  <nodes>
+    <node x="428.6474358974359" y="1023.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.ChapterUser</node>
+    <node x="0.0" y="237.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Sections</node>
+    <node x="202.0" y="215.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments</node>
+    <node x="830.6474358974359" y="957.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Journals</node>
+    <node x="808.0" y="270.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Roles</node>
+    <node x="342.0" y="553.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters</node>
+    <node x="202.0" y="0.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Categories</node>
+    <node x="628.6474358974359" y="968.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Notifications</node>
+    <node x="606.0" y="237.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Themes</node>
+    <node x="694.1474358974359" y="498.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users</node>
+    <node x="203.5" y="1023.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentUser</node>
+    <node x="404.0" y="248.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Transcriptions</node>
+    <node x="83.52243589743591" y="663.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentSection</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" relationship="REFERENCES">
+      <point x="-51.0" y="-148.5" />
+      <point x="393.0" y="477.0" />
+      <point x="338.5" y="477.0" />
+      <point x="45.5" y="115.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Categories" relationship="REFERENCES">
+      <point x="0.0" y="-115.5" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Journals" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users" relationship="REFERENCES">
+      <point x="0.0" y="-104.5" />
+      <point x="921.6474358974359" y="936.0" />
+      <point x="917.5" y="936.0" />
+      <point x="917.5" y="926.0" />
+      <point x="871.1474358974359" y="926.0" />
+      <point x="59.0" y="203.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.ChapterUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters" relationship="REFERENCES">
+      <point x="-45.0" y="-38.0" />
+      <point x="473.6474358974359" y="926.0" />
+      <point x="444.0" y="926.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" relationship="REFERENCES">
+      <point x="-50.25" y="-38.0" />
+      <point x="253.75" y="936.0" />
+      <point x="295.0224358974359" y="936.0" />
+      <point x="295.0224358974359" y="477.0" />
+      <point x="292.6474358974359" y="477.0" />
+      <point x="292.6474358974359" y="467.0" />
+      <point x="247.5" y="467.0" />
+      <point x="-45.5" y="115.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Notifications" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users" relationship="REFERENCES">
+      <point x="0.0" y="-93.5" />
+      <point x="719.6474358974359" y="936.0" />
+      <point x="917.5" y="936.0" />
+      <point x="917.5" y="926.0" />
+      <point x="871.1474358974359" y="926.0" />
+      <point x="59.0" y="203.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Transcriptions" relationship="REFERENCES">
+      <point x="51.0" y="-148.5" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentSection" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Sections" relationship="REFERENCES">
+      <point x="-50.25" y="-38.0" />
+      <point x="133.7724358974359" y="477.0" />
+      <point x="91.0" y="477.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users" relationship="REFERENCES">
+      <point x="50.25" y="-38.0" />
+      <point x="354.25" y="936.0" />
+      <point x="611.1634615384615" y="936.0" />
+      <point x="611.1634615384615" y="926.0" />
+      <point x="753.1474358974359" y="926.0" />
+      <point x="-59.0" y="203.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentSection" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" relationship="REFERENCES">
+      <point x="50.25" y="-38.0" />
+      <point x="234.2724358974359" y="477.0" />
+      <point x="292.6474358974359" y="477.0" />
+      <point x="292.6474358974359" y="467.0" />
+      <point x="247.5" y="467.0" />
+      <point x="-45.5" y="115.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Roles" relationship="REFERENCES">
+      <point x="59.0" y="-203.5" />
+      <point x="871.1474358974359" y="477.0" />
+      <point x="917.5" y="477.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.ChapterUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users" relationship="REFERENCES">
+      <point x="45.0" y="-38.0" />
+      <point x="563.6474358974359" y="936.0" />
+      <point x="611.1634615384615" y="936.0" />
+      <point x="611.1634615384615" y="926.0" />
+      <point x="753.1474358974359" y="926.0" />
+      <point x="-59.0" y="203.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Users" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Themes" relationship="REFERENCES">
+      <point x="-59.0" y="-203.5" />
+      <point x="753.1474358974359" y="477.0" />
+      <point x="697.0" y="477.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7462057335581788" showDependencies="false" x="513.5" y="583.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
