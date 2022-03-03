@@ -1,5 +1,6 @@
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Data;
+using FiveMinuteMindfulness.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -12,7 +13,8 @@ builder.Services.AddDbContext<FiveMinutesContext>(options =>
         x => x.MigrationsAssembly("FiveMinuteMindfulness.Data")));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<User, Role>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<User, Role>(options => { options.SignIn.RequireConfirmedAccount = true; })
+    .AddDefaultUI()
     .AddEntityFrameworkStores<FiveMinutesContext>()
     .AddDefaultTokenProviders();
 
@@ -32,6 +34,10 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Host.UseSerilog((context, loggerConfiguration) => loggerConfiguration
     .WriteTo.Console()
     .ReadFrom.Configuration(context.Configuration));
+
+// Inject self used services
+builder.Services.AddDataServices();
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
@@ -56,6 +62,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseSerilogRequestLogging();
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

@@ -29,10 +29,16 @@
     <ItemGroup>
       <ProjectReference Include="..\FiveMinuteMindfulness.Core\FiveMinuteMindfulness.Core.csproj" />
       <ProjectReference Include="..\FiveMinuteMindfulness.Data\FiveMinuteMindfulness.Data.csproj" />
+      <ProjectReference Include="..\FiveMinuteMindfulness.Services\FiveMinuteMindfulness.Services.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Areas" />
+      <AdditionalFiles Include="Areas\Admin\Views\Categories\Create.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\Categories\Delete.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\Categories\Details.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\Categories\Edit.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Views\Categories\Index.cshtml" />
     </ItemGroup>
 
 </Project>

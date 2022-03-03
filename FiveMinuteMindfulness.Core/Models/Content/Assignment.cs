@@ -9,9 +9,9 @@ public class Assignment : AuditEntity
     public string Title { get; set; }
     public string Description { get; set; }
     public string Author { get; set; }
-    public List<Chapter> Chapters { get; set; }
-    public List<User> Users { get; set; }
-    public List<Section> Sections { get; set; }
-    public Category Category { get; set; }
-    public Guid CategoryId { get; set; }
+    public List<Chapter>? Chapters { get; set; }
+    public List<User>? Users { get; set; }
+    public List<Section>? Sections { get; set; }
+    public Category? Category { get; set; }
+    public Guid? CategoryId { get; set; }
 }

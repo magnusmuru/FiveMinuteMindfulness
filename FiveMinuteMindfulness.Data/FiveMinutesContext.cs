@@ -2,11 +2,12 @@ using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Core.Models.Application;
 using FiveMinuteMindfulness.Core.Models.Content;
 using FiveMinuteMindfulness.Data.Configurations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FiveMinuteMindfulness.Data;
 
-public class FiveMinutesContext : DbContext
+public class FiveMinutesContext : IdentityDbContext<User, Role, Guid>
 {
     public FiveMinutesContext(DbContextOptions<FiveMinutesContext> options) : base(options)
     {
@@ -16,6 +17,7 @@ public class FiveMinutesContext : DbContext
     {
         base.OnModelCreating(builder);
         builder.ApplyConfiguration(new ChapterConfiguration());
+        builder.ApplyConfiguration(new UserConfiguration());
     }
 
     public DbSet<User> Users { get; set; }

@@ -67,6 +67,43 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("ChapterUser");
                 });
 
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Journal", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Journals");
+                });
+
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Notification", b =>
                 {
                     b.Property<Guid>("Id")
@@ -77,7 +114,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("NotificationType")
@@ -87,7 +123,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("UserId")
@@ -106,7 +141,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ColorPallete")
+                    b.Property<string>("ColorPalette")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -114,14 +149,12 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Url")
@@ -133,7 +166,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("Themes");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Assignment", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Assignment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -143,14 +176,13 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -166,7 +198,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -176,7 +207,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("Assignments");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Category", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -186,7 +217,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Title")
@@ -198,7 +228,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -206,7 +235,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Chapter", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Chapter", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -226,7 +255,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -248,7 +276,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -261,7 +288,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("Chapters");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Section", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Section", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -271,7 +298,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -287,7 +313,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -295,7 +320,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("Sections");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Transcription", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Transcription", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -309,58 +334,17 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.ToTable("Transcriptions");
-                });
-
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Journal", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("CreatedBy")
-                        .HasMaxLength(32)
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("UpdatedBy")
-                        .HasMaxLength(32)
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Journals");
                 });
 
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Role", b =>
@@ -370,17 +354,25 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
                 });
 
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.User", b =>
@@ -393,10 +385,12 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -408,10 +402,12 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -422,39 +418,148 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ThemeId")
+                    b.Property<Guid?>("ThemeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("ThemeId")
+                        .IsUnique()
+                        .HasFilter("[ThemeId] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
 
-                    b.HasIndex("ThemeId");
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
 
-                    b.ToTable("Users");
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("AssignmentSection", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Assignment", null)
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Assignment", null)
                         .WithMany()
                         .HasForeignKey("AssignmentsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Section", null)
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Section", null)
                         .WithMany()
                         .HasForeignKey("SectionsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -463,7 +568,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
 
             modelBuilder.Entity("AssignmentUser", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Assignment", null)
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Assignment", null)
                         .WithMany()
                         .HasForeignKey("AssignmentsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -478,7 +583,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
 
             modelBuilder.Entity("ChapterUser", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Chapter", null)
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Chapter", null)
                         .WithMany()
                         .HasForeignKey("ChaptersId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -489,6 +594,17 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Journal", b =>
+                {
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", "User")
+                        .WithMany("Journals")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Notification", b =>
@@ -502,80 +618,109 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Assignment", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Assignment", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Category", "Category")
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Category", "Category")
                         .WithMany("Assignments")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Chapter", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Chapter", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Assignment", "Assignment")
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Assignment", "Assignment")
                         .WithMany("Chapters")
                         .HasForeignKey("AssignmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Assignments.Transcription", "Transcription")
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Transcription", "Transcription")
                         .WithOne("Chapter")
-                        .HasForeignKey("FiveMinuteMindfulness.Core.Models.Assignments.Chapter", "TranscriptionId");
+                        .HasForeignKey("FiveMinuteMindfulness.Core.Models.Content.Chapter", "TranscriptionId");
 
                     b.Navigation("Assignment");
 
                     b.Navigation("Transcription");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Journal", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.User", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", "User")
-                        .WithMany("Journals")
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Application.Theme", "Theme")
+                        .WithOne("User")
+                        .HasForeignKey("FiveMinuteMindfulness.Core.Models.User", "ThemeId");
+
+                    b.Navigation("Theme");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", null)
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.User", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Role", "Role")
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Application.Theme", "Theme")
-                        .WithMany("Users")
-                        .HasForeignKey("ThemeId")
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
 
-                    b.Navigation("Role");
-
-                    b.Navigation("Theme");
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Theme", b =>
                 {
-                    b.Navigation("Users");
+                    b.Navigation("User")
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Assignment", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Assignment", b =>
                 {
                     b.Navigation("Chapters");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Category", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Category", b =>
                 {
                     b.Navigation("Assignments");
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Assignments.Transcription", b =>
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Transcription", b =>
                 {
                     b.Navigation("Chapter")
                         .IsRequired();

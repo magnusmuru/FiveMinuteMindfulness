@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FiveMinuteMindfulness.Data.Configurations;
 
-public class SectionConfiguration: IEntityTypeConfiguration<Section>
+public class SectionConfiguration : IEntityTypeConfiguration<Section>
 {
     public void Configure(EntityTypeBuilder<Section> builder)
     {

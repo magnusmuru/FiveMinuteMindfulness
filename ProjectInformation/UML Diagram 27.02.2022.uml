@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetRoleClaims</OriginalElement>
+  <nodes>
+    <node x="65.0" y="1001.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.ChapterUser</node>
+    <node x="1357.5994897959185" y="979.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserTokens</node>
+    <node x="1563.5994897959185" y="1001.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserRoles</node>
+    <node x="1808.045918367347" y="237.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Sections</node>
+    <node x="239.97448979591843" y="215.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments</node>
+    <node x="722.7244897959183" y="498.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers</node>
+    <node x="759.5994897959183" y="935.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Journals</node>
+    <node x="48.0" y="542.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters</node>
+    <node x="1740.5994897959185" y="979.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetRoleClaims</node>
+    <node x="1163.5994897959183" y="979.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserClaims</node>
+    <node x="239.97448979591843" y="0.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Categories</node>
+    <node x="961.5994897959183" y="946.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Notifications</node>
+    <node x="747.2244897959183" y="237.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Themes</node>
+    <node x="1599.795918367347" y="630.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetRoles</node>
+    <node x="506.5994897959184" y="979.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserLogins</node>
+    <node x="285.59948979591843" y="1001.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentUser</node>
+    <node x="17.375" y="248.0">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Transcriptions</node>
+    <node x="1838.795918367347" y="652.5">91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentSection</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" relationship="REFERENCES">
+      <point x="51.0" y="-148.5" />
+      <point x="201.0" y="477.0" />
+      <point x="285.47448979591843" y="477.0" />
+      <point x="-45.5" y="115.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Categories" relationship="REFERENCES">
+      <point x="0.0" y="-115.5" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.ChapterUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters" relationship="REFERENCES">
+      <point x="-45.0" y="-38.0" />
+      <point x="110.0" y="914.0" />
+      <point x="150.0" y="914.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" relationship="REFERENCES">
+      <point x="-50.25" y="-38.0" />
+      <point x="335.84948979591843" y="904.0" />
+      <point x="315.625" y="904.0" />
+      <point x="315.625" y="477.0" />
+      <point x="380.8494897959184" y="477.0" />
+      <point x="380.8494897959184" y="467.0" />
+      <point x="376.47448979591843" y="467.0" />
+      <point x="45.5" y="115.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Chapters" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Transcriptions" relationship="REFERENCES">
+      <point x="-51.0" y="-148.5" />
+      <point x="99.0" y="477.0" />
+      <point x="108.375" y="477.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentSection" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Sections" relationship="REFERENCES">
+      <point x="50.25" y="-38.0" />
+      <point x="1989.545918367347" y="477.0" />
+      <point x="1899.045918367347" y="477.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.ChapterUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="45.0" y="-38.0" />
+      <point x="200.0" y="914.0" />
+      <point x="410.5" y="914.0" />
+      <point x="410.5" y="904.0" />
+      <point x="780.4744897959183" y="904.0" />
+      <point x="-57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentUser" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="50.25" y="-38.0" />
+      <point x="436.34948979591843" y="914.0" />
+      <point x="410.5" y="914.0" />
+      <point x="410.5" y="904.0" />
+      <point x="780.4744897959183" y="904.0" />
+      <point x="-57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserRoles" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetRoles" relationship="REFERENCES">
+      <point x="39.25" y="-38.0" />
+      <point x="1681.3494897959185" y="914.0" />
+      <point x="1709.295918367347" y="914.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserTokens" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="0.0" y="-60.5" />
+      <point x="1450.5994897959185" y="914.0" />
+      <point x="1151.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="904.0" />
+      <point x="895.9744897959183" y="904.0" />
+      <point x="57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Themes" relationship="REFERENCES">
+      <point x="0.0" y="-192.5" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Journals" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="0.0" y="-104.5" />
+      <point x="850.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="904.0" />
+      <point x="895.9744897959183" y="904.0" />
+      <point x="57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetRoleClaims" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetRoles" relationship="REFERENCES">
+      <point x="0.0" y="-60.5" />
+      <point x="1827.5994897959185" y="914.0" />
+      <point x="1709.295918367347" y="914.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Notifications" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="0.0" y="-93.5" />
+      <point x="1052.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="904.0" />
+      <point x="895.9744897959183" y="904.0" />
+      <point x="57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AssignmentSection" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.Assignments" relationship="REFERENCES">
+      <point x="-50.25" y="-38.0" />
+      <point x="1889.045918367347" y="477.0" />
+      <point x="380.84948979591843" y="477.0" />
+      <point x="380.8494897959184" y="467.0" />
+      <point x="376.47448979591843" y="467.0" />
+      <point x="45.5" y="115.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserRoles" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="-39.25" y="-38.0" />
+      <point x="1602.8494897959185" y="914.0" />
+      <point x="1151.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="904.0" />
+      <point x="895.9744897959183" y="904.0" />
+      <point x="57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserLogins" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="0.0" y="-60.5" />
+      <point x="623.0994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="904.0" />
+      <point x="895.9744897959183" y="904.0" />
+      <point x="57.75" y="192.5" />
+    </edge>
+    <edge source="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUserClaims" target="91e71a0c-2b94-43a4-a80c-7d4808fd5265.TABLE:fiveminutes.dbo.AspNetUsers" relationship="REFERENCES">
+      <point x="0.0" y="-60.5" />
+      <point x="1250.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="914.0" />
+      <point x="1151.5994897959183" y="904.0" />
+      <point x="895.9744897959183" y="904.0" />
+      <point x="57.75" y="192.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7359223300970874" showDependencies="false" x="1020.0" y="572.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
