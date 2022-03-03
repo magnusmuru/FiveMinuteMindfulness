@@ -29,7 +29,7 @@
 _UpgradeReport_Files/
 [Pp]ackages/
 
-.idea/**
+.idea/
 Thumbs.db
 Desktop.ini
 .DS_Store
