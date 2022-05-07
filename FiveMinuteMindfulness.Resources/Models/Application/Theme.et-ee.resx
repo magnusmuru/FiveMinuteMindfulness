@@ -20,4 +20,16 @@
     <data name="User" xml:space="preserve">
         <value>Kasutaja</value>
     </data>
+    <data name="UserRequired" xml:space="preserve">
+        <value>Kasutaja väli on kohustuslik.</value>
+    </data>
+    <data name="UrlRequired" xml:space="preserve">
+        <value>Tausta URL väli on kohustuslik.</value>
+    </data>
+    <data name="SelectUser" xml:space="preserve">
+        <value>Vali Kasutaja</value>
+    </data>
+    <data name="ColorPaletteRequired" xml:space="preserve">
+        <value>Värvipaletti väli on kohustuslik.</value>
+    </data>
 </root>

@@ -24,4 +24,13 @@
     <data name="Chapter" xml:space="preserve">
         <value>Chapter</value>
     </data>
+    <data name="ChapterRequired" xml:space="preserve">
+        <value>The Chapter field is required.</value>
+    </data>
+    <data name="ContentRequired" xml:space="preserve">
+        <value>The Content field is required.</value>
+    </data>
+    <data name="SelectChapter" xml:space="preserve">
+        <value>Select Chapter</value>
+    </data>
 </root>

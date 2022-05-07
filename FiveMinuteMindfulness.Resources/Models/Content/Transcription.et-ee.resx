@@ -17,4 +17,13 @@
     <data name="Chapter" xml:space="preserve">
         <value>Peatükk</value>
     </data>
+    <data name="SelectChapter" xml:space="preserve">
+        <value>Vali Peatükk</value>
+    </data>
+    <data name="ChapterRequired" xml:space="preserve">
+        <value>Peatüki väli on kohustuslik.</value>
+    </data>
+    <data name="ContentRequired" xml:space="preserve">
+        <value>Sisu väli on kohustuslik.</value>
+    </data>
 </root>

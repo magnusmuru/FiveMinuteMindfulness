@@ -70,11 +70,38 @@ namespace FiveMinuteMindfulness.Resources.Models.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Chapter field is required..
+        /// </summary>
+        public static string ChapterRequired {
+            get {
+                return ResourceManager.GetString("ChapterRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Content.
         /// </summary>
         public static string Content {
             get {
                 return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Content field is required..
+        /// </summary>
+        public static string ContentRequired {
+            get {
+                return ResourceManager.GetString("ContentRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Chapter.
+        /// </summary>
+        public static string SelectChapter {
+            get {
+                return ResourceManager.GetString("SelectChapter", resourceCulture);
             }
         }
     }

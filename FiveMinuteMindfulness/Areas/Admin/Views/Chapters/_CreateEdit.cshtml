@@ -20,14 +20,14 @@
 <div class="form-group">
     <label asp-for="ChapterType" class="control-label"></label>
     <select asp-for="ChapterType" class="form-select" asp-items="Html.GetEnumSelectList<ChapterType>()">
-        <option>Select Chapter type</option>
+        <option>@FiveMinuteMindfulness.Resources.Models.Content.Chapter.SelectChapterType</option>
     </select>
     <span asp-validation-for="ChapterType" class="text-danger"></span>
 </div>
 <div class="form-group">
     <label asp-for="Assignment" class="control-label"></label>
     <select asp-for="AssignmentId" class="form-select" asp-items="@(new SelectList(Model.AssignmentDtos, nameof(AssignmentDto.Id), nameof(AssignmentDto.Title)))">
-        <option>Select Assignment</option>
+        <option>@FiveMinuteMindfulness.Resources.Models.Content.Chapter.SelectAssignment</option>
     </select>
     <span asp-validation-for="AssignmentId" class="text-danger"></span>
 </div>

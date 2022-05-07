@@ -24,4 +24,10 @@
     <data name="Description" xml:space="preserve">
         <value>Description</value>
     </data>
+    <data name="TitleRequired" xml:space="preserve">
+        <value>The Title field is required.</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>The Description field is required.</value>
+    </data>
 </root>

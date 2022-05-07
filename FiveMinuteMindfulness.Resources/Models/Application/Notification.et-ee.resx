@@ -20,4 +20,19 @@
     <data name="User" xml:space="preserve">
         <value>Kasutaja</value>
     </data>
+    <data name="ContentRequired" xml:space="preserve">
+        <value>Sisu väli on kohustuslik.</value>
+    </data>
+    <data name="NotificationTypeRequired" xml:space="preserve">
+        <value>Teavituse Tüübi väli on kohustuslik.</value>
+    </data>
+    <data name="SelectUser" xml:space="preserve">
+        <value>Vali Kasutaja</value>
+    </data>
+    <data name="UserRequired" xml:space="preserve">
+        <value>Kasutaja väli on kohustuslik.</value>
+    </data>
+    <data name="SelectNotificationType" xml:space="preserve">
+        <value>Vali Teavituse Tüüp</value>
+    </data>
 </root>

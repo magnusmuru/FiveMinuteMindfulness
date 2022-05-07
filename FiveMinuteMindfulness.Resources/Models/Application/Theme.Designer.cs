@@ -70,6 +70,24 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Color Palette field is required..
+        /// </summary>
+        public static string ColorPaletteRequired {
+            get {
+                return ResourceManager.GetString("ColorPaletteRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select User.
+        /// </summary>
+        public static string SelectUser {
+            get {
+                return ResourceManager.GetString("SelectUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Background URL.
         /// </summary>
         public static string Url {
@@ -79,11 +97,29 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Background URL field is required..
+        /// </summary>
+        public static string UrlRequired {
+            get {
+                return ResourceManager.GetString("UrlRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User.
         /// </summary>
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The User field is required..
+        /// </summary>
+        public static string UserRequired {
+            get {
+                return ResourceManager.GetString("UserRequired", resourceCulture);
             }
         }
     }

@@ -27,4 +27,19 @@
     <data name="User" xml:space="preserve">
         <value>User</value>
     </data>
+    <data name="ContentRequired" xml:space="preserve">
+        <value>The Content field is required.</value>
+    </data>
+    <data name="NotificationTypeRequired" xml:space="preserve">
+        <value>The Notification Type field is required.</value>
+    </data>
+    <data name="UserRequired" xml:space="preserve">
+        <value>The User field is required.</value>
+    </data>
+    <data name="SelectUser" xml:space="preserve">
+        <value>Select User</value>
+    </data>
+    <data name="SelectNotificationType" xml:space="preserve">
+        <value>Select Notification Type</value>
+    </data>
 </root>

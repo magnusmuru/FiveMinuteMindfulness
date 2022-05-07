@@ -26,4 +26,25 @@
     <data name="Title" xml:space="preserve">
         <value>Pealkiri</value>
     </data>
+    <data name="AssignmentRequired" xml:space="preserve">
+        <value>Ülesande väli on kohustuslik.</value>
+    </data>
+    <data name="AuthorRequired" xml:space="preserve">
+        <value>Autori väli on kohustuslik.</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>Kirjelduse väli on kohustuslik.</value>
+    </data>
+    <data name="TitleRequired" xml:space="preserve">
+        <value>Pealkirja väli on kohustuslik.</value>
+    </data>
+    <data name="ChapterTypeRequired" xml:space="preserve">
+        <value>Peatüki Liigi väli on kohustuslik.</value>
+    </data>
+    <data name="SelectChapterType" xml:space="preserve">
+        <value>Vali Peatüki Liik</value>
+    </data>
+    <data name="SelectAssignment" xml:space="preserve">
+        <value>Vali Ülesanne</value>
+    </data>
 </root>

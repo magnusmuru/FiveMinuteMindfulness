@@ -27,4 +27,16 @@
     <data name="User" xml:space="preserve">
         <value>User</value>
     </data>
+    <data name="ColorPaletteRequired" xml:space="preserve">
+        <value>The Color Palette field is required.</value>
+    </data>
+    <data name="UrlRequired" xml:space="preserve">
+        <value>The Background URL field is required.</value>
+    </data>
+    <data name="UserRequired" xml:space="preserve">
+        <value>The User field is required.</value>
+    </data>
+    <data name="SelectUser" xml:space="preserve">
+        <value>Select User</value>
+    </data>
 </root>

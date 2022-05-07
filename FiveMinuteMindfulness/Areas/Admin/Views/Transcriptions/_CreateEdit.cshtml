@@ -10,7 +10,7 @@
 <div class="form-group">
     <label asp-for="Chapter" class="control-label"></label>
     <select asp-for="ChapterId" class="form-select" asp-items="@(new SelectList(Model.ChapterDtos, nameof(ChapterDto.Id), nameof(ChapterDto.Title)))">
-        <option>Select Chapter</option>
+        <option>@FiveMinuteMindfulness.Resources.Models.Content.Transcription.SelectChapter</option>
     </select>
     <span asp-validation-for="ChapterId" class="text-danger"></span>
 </div>

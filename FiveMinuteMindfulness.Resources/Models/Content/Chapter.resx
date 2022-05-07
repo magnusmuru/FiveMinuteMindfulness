@@ -33,4 +33,25 @@
     <data name="Assignment" xml:space="preserve">
         <value>Assignment</value>
     </data>
+    <data name="AssignmentRequired" xml:space="preserve">
+        <value>The Assignment field is required.</value>
+    </data>
+    <data name="AuthorRequired" xml:space="preserve">
+        <value>The Author field is required.</value>
+    </data>
+    <data name="ChapterTypeRequired" xml:space="preserve">
+        <value>The Chapter Type field is required.</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>The Description field is required.</value>
+    </data>
+    <data name="TitleRequired" xml:space="preserve">
+        <value>The Title field is required.</value>
+    </data>
+    <data name="SelectChapterType" xml:space="preserve">
+        <value>Select Chapter Type</value>
+    </data>
+    <data name="SelectAssignment" xml:space="preserve">
+        <value>Select Assignment</value>
+    </data>
 </root>

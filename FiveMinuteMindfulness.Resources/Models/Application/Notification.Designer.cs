@@ -70,6 +70,15 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Content field is required..
+        /// </summary>
+        public static string ContentRequired {
+            get {
+                return ResourceManager.GetString("ContentRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification Type.
         /// </summary>
         public static string NotificationType {
@@ -79,11 +88,47 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Notification Type field is required..
+        /// </summary>
+        public static string NotificationTypeRequired {
+            get {
+                return ResourceManager.GetString("NotificationTypeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Notification Type.
+        /// </summary>
+        public static string SelectNotificationType {
+            get {
+                return ResourceManager.GetString("SelectNotificationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select User.
+        /// </summary>
+        public static string SelectUser {
+            get {
+                return ResourceManager.GetString("SelectUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User.
         /// </summary>
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The User field is required..
+        /// </summary>
+        public static string UserRequired {
+            get {
+                return ResourceManager.GetString("UserRequired", resourceCulture);
             }
         }
     }

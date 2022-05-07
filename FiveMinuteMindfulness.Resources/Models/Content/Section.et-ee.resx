@@ -17,4 +17,10 @@
     <data name="Description" xml:space="preserve">
         <value>Kirjeldus</value>
     </data>
+    <data name="TitleRequired" xml:space="preserve">
+        <value>Pealkirja väli on kohustuslik.</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>Kirjelduse väli on kohustuslik.</value>
+    </data>
 </root>

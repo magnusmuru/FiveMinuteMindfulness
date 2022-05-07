@@ -33,4 +33,25 @@
     <data name="Title" xml:space="preserve">
         <value>Title</value>
     </data>
+    <data name="AuthorRequired" xml:space="preserve">
+        <value>The Author field is required.</value>
+    </data>
+    <data name="CategoryRequired" xml:space="preserve">
+        <value>The Category field is required.</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>The Description field is required.</value>
+    </data>
+    <data name="SectionRequired" xml:space="preserve">
+        <value>The Section field is required.</value>
+    </data>
+    <data name="TitleRequired" xml:space="preserve">
+        <value>The Title field is required.</value>
+    </data>
+    <data name="NoCategory" xml:space="preserve">
+        <value>No Category</value>
+    </data>
+    <data name="SelectSection" xml:space="preserve">
+        <value>Select Section</value>
+    </data>
 </root>

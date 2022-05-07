@@ -70,11 +70,29 @@ namespace FiveMinuteMindfulness.Resources.Models.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Assignment field is required..
+        /// </summary>
+        public static string AssignmentRequired {
+            get {
+                return ResourceManager.GetString("AssignmentRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Author.
         /// </summary>
         public static string Author {
             get {
                 return ResourceManager.GetString("Author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Author field is required..
+        /// </summary>
+        public static string AuthorRequired {
+            get {
+                return ResourceManager.GetString("AuthorRequired", resourceCulture);
             }
         }
         
@@ -88,6 +106,15 @@ namespace FiveMinuteMindfulness.Resources.Models.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Chapter Type field is required..
+        /// </summary>
+        public static string ChapterTypeRequired {
+            get {
+                return ResourceManager.GetString("ChapterTypeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {
@@ -97,11 +124,47 @@ namespace FiveMinuteMindfulness.Resources.Models.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Description field is required..
+        /// </summary>
+        public static string DescriptionRequired {
+            get {
+                return ResourceManager.GetString("DescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Assignment.
+        /// </summary>
+        public static string SelectAssignment {
+            get {
+                return ResourceManager.GetString("SelectAssignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Chapter Type.
+        /// </summary>
+        public static string SelectChapterType {
+            get {
+                return ResourceManager.GetString("SelectChapterType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Title field is required..
+        /// </summary>
+        public static string TitleRequired {
+            get {
+                return ResourceManager.GetString("TitleRequired", resourceCulture);
             }
         }
     }
