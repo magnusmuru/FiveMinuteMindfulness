@@ -12,42 +12,48 @@ public class AssignmentsController : Controller
     private ILogger<AssignmentsController> _logger;
     private readonly IAssignmentService _assignmentService;
     private readonly UserManager<User> _userManager;
+    private readonly ICategoryService _categoryService;
+    private readonly ISectionService _sectionService;
 
     public AssignmentsController(ILogger<AssignmentsController> logger,
         UserManager<User> userManager,
-        IAssignmentService assignmentService)
+        IAssignmentService assignmentService,
+        ICategoryService categoryService,
+        ISectionService sectionService)
     {
         _logger = logger;
         _userManager = userManager;
         _assignmentService = assignmentService;
+        _categoryService = categoryService;
+        _sectionService = sectionService;
     }
 
     public async Task<IActionResult> Index()
     {
-        return View(await _assignmentService.GetAllAsync());
+        return View(await _assignmentService.FindAssignmentsWithCategoriesAndSections());
     }
 
-    public ViewResult Create()
+    public async Task<ViewResult> Create()
     {
-        return View();
+        var viewModel = new AssignmentDto
+        {
+            CategoryDtos = await _categoryService.GetAllAsync(),
+            SectionDtos = await _sectionService.GetAllAsync()
+        };
+
+        return View(viewModel);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(
-        [Bind("Title, Description, Author")] AssignmentDto model)
+    public async Task<IActionResult> Create(AssignmentDto model)
     {
-        if (ModelState.IsValid)
-        {
-            var id = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(id);
-            model.UpdatedBy = Guid.Parse(id);
+        var id = _userManager.GetUserId(User);
+        model.CreatedBy = Guid.Parse(id);
+        model.UpdatedBy = Guid.Parse(id);
 
-            await _assignmentService.AddAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        await _assignmentService.AddAsync(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -57,12 +63,15 @@ public class AssignmentsController : Controller
             return NotFound();
         }
 
-        var assignment = await _assignmentService.GetByIdAsync((Guid)id);
+        var assignment = await _assignmentService.GetByIdAsync((Guid) id);
 
         if (assignment == null)
         {
             return NotFound();
         }
+
+        assignment.CategoryDtos = await _categoryService.GetAllAsync();
+        assignment.SectionDtos = await _sectionService.GetAllAsync();
 
         return View(assignment);
     }
@@ -70,24 +79,18 @@ public class AssignmentsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Description, Author")] AssignmentDto model)
+        AssignmentDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
 
-        if (ModelState.IsValid)
-        {
-            var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
-            model.UpdatedBy = Guid.Parse(userId);
-            await _assignmentService.UpdateAsync(model);
+        var userId = _userManager.GetUserId(User);
+        model.UpdatedBy = Guid.Parse(userId);
+        await _assignmentService.UpdateAsync(model);
 
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -97,14 +100,29 @@ public class AssignmentsController : Controller
             return NotFound();
         }
 
-        var meeting = await _assignmentService.GetByIdAsync((Guid)id);
+        var assignment = await _assignmentService.GetByIdAsync((Guid) id);
 
-        if (meeting == null)
+        if (assignment == null)
         {
             return NotFound();
         }
 
-        return View(meeting);
+        var section = await _sectionService.GetByIdAsync(assignment.SectionId);
+        if (section != null)
+        {
+            assignment.Section = section;
+        }
+
+        if (assignment.CategoryId != null)
+        {
+            var category = await _categoryService.GetByIdAsync((Guid) assignment.CategoryId);
+            if (category != null)
+            {
+                assignment.Category = category;
+            }
+        }
+
+        return View(assignment);
     }
 
     public async Task<IActionResult> Delete(Guid? id)
@@ -114,10 +132,25 @@ public class AssignmentsController : Controller
             return NotFound();
         }
 
-        var assignment = await _assignmentService.GetByIdAsync((Guid)id);
+        var assignment = await _assignmentService.GetByIdAsync((Guid) id);
         if (assignment == null)
         {
             return NotFound();
+        }
+
+        var section = await _sectionService.GetByIdAsync(assignment.SectionId);
+        if (section != null)
+        {
+            assignment.Section = section;
+        }
+
+        if (assignment.CategoryId != null)
+        {
+            var category = await _categoryService.GetByIdAsync((Guid) assignment.CategoryId);
+            if (category != null)
+            {
+                assignment.Category = category;
+            }
         }
 
         return View(assignment);

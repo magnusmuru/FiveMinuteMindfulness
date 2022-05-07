@@ -35,8 +35,9 @@ public class SectionsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("Title, Description, Author")] SectionDto model)
+        [Bind("Title, Description")] SectionDto model)
     {
+        ModelState.Remove("Assignments");
         if (ModelState.IsValid)
         {
             var id = _userManager.GetUserId(User);
@@ -69,18 +70,18 @@ public class SectionsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Description, Author")] SectionDto model)
+    public async Task<IActionResult> Edit(Guid id, SectionDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
+        
+        ModelState.Remove("Assignments");
 
         if (ModelState.IsValid)
         {
             var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
             model.UpdatedBy = Guid.Parse(userId);
             await _sectionService.UpdateAsync(model);
 
@@ -97,14 +98,14 @@ public class SectionsController : Controller
             return NotFound();
         }
 
-        var meeting = await _sectionService.GetByIdAsync((Guid)id);
+        var section = await _sectionService.GetByIdAsync((Guid)id);
 
-        if (meeting == null)
+        if (section == null)
         {
             return NotFound();
         }
 
-        return View(meeting);
+        return View(section);
     }
 
     public async Task<IActionResult> Delete(Guid? id)

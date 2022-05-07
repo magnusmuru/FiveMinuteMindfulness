@@ -6,7 +6,10 @@
     <title>@ViewData["Title"] - FiveMinuteMindfulness</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/FiveMinuteMindfulness.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700&display=swap" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap" asp-append-version="true"/>
 </head>
 <body>
 <header>
@@ -32,19 +35,34 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Assignments" asp-action="Index">Assignments</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Categories" asp-action="Index">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Categories" asp-action="Index">Categries</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sections" asp-action="Index">Sections</a>
+                            </li>
+                            <li>
+                                <br/>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Assignments" asp-action="Index">Assignments</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Chapters" asp-action="Index">Chapters</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sections" asp-action="Index">Sections</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Transcriptions" asp-action="Index">Transcriptions</a>
+                            </li>
+                            <li>
+                                <br/>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Transcriptions" asp-action="Index">Transcriptions</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Journals" asp-action="Index">Journals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Notifications" asp-action="Index">Notifications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Themes" asp-action="Index">Themes</a>
                             </li>
                         </ul>
                     </li>
@@ -55,13 +73,12 @@
         </div>
     </nav>
 </header>
-<div class="container">
+<div class="w-100">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
-
-<footer class="border-top footer text-muted">
+<footer class="border-top footer text-muted bg-light">
     <div class="container">
         &copy; 2022 - FiveMinuteMindfulness - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>

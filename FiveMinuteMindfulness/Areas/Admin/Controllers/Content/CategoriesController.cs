@@ -34,9 +34,9 @@ public class CategoriesController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(
-        [Bind("Title, Assignments")] CategoryDto model)
+    public async Task<IActionResult> Create(CategoryDto model)
     {
+        ModelState.Remove("Assignments");
         if (ModelState.IsValid)
         {
             var id = _userManager.GetUserId(User);
@@ -57,7 +57,7 @@ public class CategoriesController : Controller
             return NotFound();
         }
 
-        var category = await _categoryService.GetByIdAsync((Guid)id);
+        var category = await _categoryService.GetByIdAsync((Guid) id);
 
         if (category == null)
         {
@@ -69,18 +69,18 @@ public class CategoriesController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Assignments")] CategoryDto model)
+    public async Task<IActionResult> Edit(Guid id, CategoryDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
+        
+        ModelState.Remove("Assignments");
 
         if (ModelState.IsValid)
         {
             var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
             model.UpdatedBy = Guid.Parse(userId);
             await _categoryService.UpdateAsync(model);
 
@@ -97,7 +97,7 @@ public class CategoriesController : Controller
             return NotFound();
         }
 
-        var meeting = await _categoryService.GetByIdAsync((Guid)id);
+        var meeting = await _categoryService.GetByIdAsync((Guid) id);
 
         if (meeting == null)
         {
@@ -114,7 +114,7 @@ public class CategoriesController : Controller
             return NotFound();
         }
 
-        var category = await _categoryService.GetByIdAsync((Guid)id);
+        var category = await _categoryService.GetByIdAsync((Guid) id);
         if (category == null)
         {
             return NotFound();

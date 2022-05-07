@@ -10,7 +10,6 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
     {
         builder.HasOne(chapter => chapter.Transcription)
             .WithOne(transcription => transcription.Chapter)
-            .HasForeignKey<Chapter>(x => x.TranscriptionId)
-            .IsRequired(false);
+            .HasForeignKey<Transcription>(x => x.ChapterId);
     }
 }

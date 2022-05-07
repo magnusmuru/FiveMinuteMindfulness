@@ -7,14 +7,27 @@ using FiveMinuteMindfulness.Services.Domain;
 
 namespace FiveMinuteMindfulness.Services.Application;
 
-public class NotificationService: ServiceBase<Notification, NotificationDto>, INotificationService
+public class NotificationService : ServiceBase<Notification, NotificationDto>, INotificationService
 {
+    private readonly INotificationRepository _repository;
+    private readonly IMapper _mapper;
+
     public NotificationService(INotificationRepository repository, IMapper mapper) : base(repository, mapper)
     {
+        _repository = repository;
+        _mapper = mapper;
+    }
+
+    public async Task<List<NotificationDto>> FindNotificationsWithUsers()
+    {
+        var notifications = await _repository.FindNotificationsWithUsers();
+        return _mapper.Map<List<NotificationDto>>(notifications);
     }
 
     protected override void UpdateEntityValues(Notification entity, NotificationDto entityDto)
     {
-        throw new NotImplementedException();
+        entity.NotificationType = entityDto.NotificationType;
+        entity.Content = entityDto.Content;
+        entity.UserId = entityDto.UserId;
     }
 }

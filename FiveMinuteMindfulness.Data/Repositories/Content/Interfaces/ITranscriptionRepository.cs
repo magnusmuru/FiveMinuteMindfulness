@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Data.Repositories.Content.Interfaces;
 
 public interface ITranscriptionRepository : IRepositoryBase<Transcription>
 {
+    Task<List<Transcription>> FindTranscriptionsWithChapters();
 }

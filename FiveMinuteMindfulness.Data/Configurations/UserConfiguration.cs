@@ -1,4 +1,5 @@
 using FiveMinuteMindfulness.Core.Models;
+using FiveMinuteMindfulness.Core.Models.Application;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -10,7 +11,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         builder.HasOne(user => user.Theme)
             .WithOne(theme => theme.User)
-            .HasForeignKey<User>(x => x.ThemeId)
-            .IsRequired(false);
+            .HasForeignKey<Theme>(x => x.UserId);
     }
 }

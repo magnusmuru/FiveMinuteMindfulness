@@ -22,21 +22,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("AssignmentSection", b =>
-                {
-                    b.Property<Guid>("AssignmentsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SectionsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("AssignmentsId", "SectionsId");
-
-                    b.HasIndex("SectionsId");
-
-                    b.ToTable("AssignmentSection");
-                });
-
             modelBuilder.Entity("AssignmentUser", b =>
                 {
                     b.Property<Guid>("AssignmentsId")
@@ -83,6 +68,11 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Subtitle")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -109,6 +99,10 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -161,7 +155,13 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Themes");
                 });
@@ -189,6 +189,9 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("SectionId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -203,6 +206,8 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("SectionId");
 
                     b.ToTable("Assignments");
                 });
@@ -269,7 +274,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
-                    b.Property<Guid>("TranscriptionId")
+                    b.Property<Guid?>("TranscriptionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -283,7 +288,8 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.HasIndex("AssignmentId");
 
                     b.HasIndex("TranscriptionId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[TranscriptionId] IS NOT NULL");
 
                     b.ToTable("Chapters");
                 });
@@ -324,6 +330,9 @@ namespace FiveMinuteMindfulness.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ChapterId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
@@ -421,7 +430,7 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ThemeId")
+                    b.Property<Guid>("ThemeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -440,10 +449,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("ThemeId")
-                        .IsUnique()
-                        .HasFilter("[ThemeId] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -551,21 +556,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AssignmentSection", b =>
-                {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Assignment", null)
-                        .WithMany()
-                        .HasForeignKey("AssignmentsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Section", null)
-                        .WithMany()
-                        .HasForeignKey("SectionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("AssignmentUser", b =>
                 {
                     b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Assignment", null)
@@ -618,13 +608,32 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Theme", b =>
+                {
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.User", "User")
+                        .WithOne("Theme")
+                        .HasForeignKey("FiveMinuteMindfulness.Core.Models.Application.Theme", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Assignment", b =>
                 {
                     b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Category", "Category")
                         .WithMany("Assignments")
                         .HasForeignKey("CategoryId");
 
+                    b.HasOne("FiveMinuteMindfulness.Core.Models.Content.Section", "Section")
+                        .WithMany("Assignments")
+                        .HasForeignKey("SectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Section");
                 });
 
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Chapter", b =>
@@ -642,15 +651,6 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Navigation("Assignment");
 
                     b.Navigation("Transcription");
-                });
-
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.User", b =>
-                {
-                    b.HasOne("FiveMinuteMindfulness.Core.Models.Application.Theme", "Theme")
-                        .WithOne("User")
-                        .HasForeignKey("FiveMinuteMindfulness.Core.Models.User", "ThemeId");
-
-                    b.Navigation("Theme");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -704,18 +704,17 @@ namespace FiveMinuteMindfulness.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Application.Theme", b =>
-                {
-                    b.Navigation("User")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Assignment", b =>
                 {
                     b.Navigation("Chapters");
                 });
 
             modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Category", b =>
+                {
+                    b.Navigation("Assignments");
+                });
+
+            modelBuilder.Entity("FiveMinuteMindfulness.Core.Models.Content.Section", b =>
                 {
                     b.Navigation("Assignments");
                 });
@@ -731,6 +730,9 @@ namespace FiveMinuteMindfulness.Data.Migrations
                     b.Navigation("Journals");
 
                     b.Navigation("Notifications");
+
+                    b.Navigation("Theme")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

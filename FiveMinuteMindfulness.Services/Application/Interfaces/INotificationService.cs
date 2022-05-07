@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Services.Application.Interfaces;
 
 public interface INotificationService : IServiceBase<NotificationDto>
 {
+    Task<List<NotificationDto>> FindNotificationsWithUsers();
 }

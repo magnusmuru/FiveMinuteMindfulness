@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Services.Application.Interfaces;
 
 public interface IJournalService : IServiceBase<JournalDto>
 {
+    Task<List<JournalDto>> FindJournalsWithUsers();
 }

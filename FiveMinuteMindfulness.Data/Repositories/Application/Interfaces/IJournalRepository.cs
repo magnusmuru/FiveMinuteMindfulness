@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Data.Repositories.Application.Interfaces;
 
 public interface IJournalRepository : IRepositoryBase<Journal>
 {
+    Task<List<Journal>> FindJournalsWithUsers();
 }

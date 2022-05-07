@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<div class="container">
+<h1>Themes</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -17,6 +17,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ColorPalette)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
         </th>
         <th>
             Actions
@@ -36,6 +39,9 @@
                     @Html.DisplayFor(modelItem => item.ColorPalette)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.User.Username)
+                </td>
+                <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -44,4 +50,4 @@
         }
     }
     </tbody>
-</table>
+</table></div>

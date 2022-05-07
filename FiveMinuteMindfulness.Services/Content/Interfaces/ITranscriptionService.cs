@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Services.Content.Interfaces;
 
 public interface ITranscriptionService : IServiceBase<TranscriptionDto>
 {
+    Task<List<TranscriptionDto>> FindTranscriptionsWithChapters();
 }

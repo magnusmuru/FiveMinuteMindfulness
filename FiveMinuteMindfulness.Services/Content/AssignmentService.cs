@@ -9,12 +9,26 @@ namespace FiveMinuteMindfulness.Services.Content;
 
 public class AssignmentService : ServiceBase<Assignment, AssignmentDto>, IAssignmentService
 {
+    private readonly IAssignmentRepository _repository;
+    private readonly IMapper _mapper;
+
     public AssignmentService(IAssignmentRepository repository, IMapper mapper) : base(repository, mapper)
     {
+        _repository = repository;
+        _mapper = mapper;
     }
 
     protected override void UpdateEntityValues(Assignment entity, AssignmentDto entityDto)
     {
-        throw new NotImplementedException();
+        entity.Author = entityDto.Author;
+        entity.CategoryId = entityDto.CategoryId;
+        entity.Title = entityDto.Title;
+        entity.Description = entityDto.Description;
+    }
+
+    public async Task<List<AssignmentDto>> FindAssignmentsWithCategoriesAndSections()
+    {
+        var assignments = await _repository.FindAssignmentsWithCategoriesAndSections();
+        return _mapper.Map<List<AssignmentDto>>(assignments);
     }
 }

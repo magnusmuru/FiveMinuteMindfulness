@@ -1,6 +1,7 @@
 using FiveMinuteMindfulness.Core.Dto.Application;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Application.Interfaces;
+using FiveMinuteMindfulness.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,42 +13,46 @@ public class NotificationsController : Controller
     private ILogger<NotificationsController> _logger;
     private readonly INotificationService _notificationService;
     private readonly UserManager<User> _userManager;
+    private readonly IUserService _userService;
 
     public NotificationsController(ILogger<NotificationsController> logger,
         UserManager<User> userManager,
-        INotificationService notificationService)
+        INotificationService notificationService,
+        IUserService userService)
     {
         _logger = logger;
         _userManager = userManager;
         _notificationService = notificationService;
+        _userService = userService;
     }
 
     public async Task<IActionResult> Index()
     {
-        return View(await _notificationService.GetAllAsync());
+        return View(await _notificationService.FindNotificationsWithUsers());
     }
 
-    public ViewResult Create()
+    public async Task<ViewResult> Create()
     {
-        return View();
+        var viewModel = new NotificationDto()
+        {
+            UserDtos = await _userService.GetAllAsync()
+        };
+
+        return View(viewModel);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("Title, Description, Author")] NotificationDto model)
+        [Bind("NotificationType, Content, UserId")]
+        NotificationDto model)
     {
-        if (ModelState.IsValid)
-        {
-            var id = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(id);
-            model.UpdatedBy = Guid.Parse(id);
+        var id = _userManager.GetUserId(User);
+        model.CreatedBy = Guid.Parse(id);
+        model.UpdatedBy = Guid.Parse(id);
 
-            await _notificationService.AddAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        await _notificationService.AddAsync(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -57,37 +62,32 @@ public class NotificationsController : Controller
             return NotFound();
         }
 
-        var notification = await _notificationService.GetByIdAsync((Guid)id);
+        var notification = await _notificationService.GetByIdAsync((Guid) id);
 
         if (notification == null)
         {
             return NotFound();
         }
 
+        notification.UserDtos = await _userService.GetAllAsync();
+
         return View(notification);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Description, Author")] NotificationDto model)
+    public async Task<IActionResult> Edit(Guid id, NotificationDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
 
-        if (ModelState.IsValid)
-        {
-            var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
-            model.UpdatedBy = Guid.Parse(userId);
-            await _notificationService.UpdateAsync(model);
+        var userId = _userManager.GetUserId(User);
+        model.UpdatedBy = Guid.Parse(userId);
+        await _notificationService.UpdateAsync(model);
 
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -97,14 +97,20 @@ public class NotificationsController : Controller
             return NotFound();
         }
 
-        var meeting = await _notificationService.GetByIdAsync((Guid)id);
+        var notification = await _notificationService.GetByIdAsync((Guid) id);
 
-        if (meeting == null)
+        if (notification == null)
         {
             return NotFound();
         }
 
-        return View(meeting);
+        var user = await _userService.GetByIdAsync(notification.UserId);
+        if (user != null)
+        {
+            notification.User = user;
+        }
+
+        return View(notification);
     }
 
     public async Task<IActionResult> Delete(Guid? id)
@@ -114,10 +120,16 @@ public class NotificationsController : Controller
             return NotFound();
         }
 
-        var notification = await _notificationService.GetByIdAsync((Guid)id);
+        var notification = await _notificationService.GetByIdAsync((Guid) id);
         if (notification == null)
         {
             return NotFound();
+        }
+
+        var user = await _userService.GetByIdAsync(notification.UserId);
+        if (user != null)
+        {
+            notification.User = user;
         }
 
         return View(notification);

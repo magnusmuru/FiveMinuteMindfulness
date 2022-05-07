@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Services.Content.Interfaces;
 
 public interface IChapterService : IServiceBase<ChapterDto>
 {
+    Task<List<ChapterDto>> FindChaptersWithAssignments();
 }

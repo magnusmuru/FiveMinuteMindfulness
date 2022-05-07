@@ -1,6 +1,7 @@
 using FiveMinuteMindfulness.Core.Dto.Application;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Application.Interfaces;
+using FiveMinuteMindfulness.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,42 +13,46 @@ public class JournalsController : Controller
     private ILogger<JournalsController> _logger;
     private readonly IJournalService _journalService;
     private readonly UserManager<User> _userManager;
+    private readonly IUserService _userService;
 
     public JournalsController(ILogger<JournalsController> logger,
         UserManager<User> userManager,
-        IJournalService journalService)
+        IJournalService journalService,
+        IUserService userService)
     {
         _logger = logger;
         _userManager = userManager;
         _journalService = journalService;
+        _userService = userService;
     }
 
     public async Task<IActionResult> Index()
     {
-        return View(await _journalService.GetAllAsync());
+        return View(await _journalService.FindJournalsWithUsers());
     }
 
-    public ViewResult Create()
+    public async Task<ViewResult> Create()
     {
-        return View();
+        var viewModel = new JournalDto
+        {
+            UserDtos = await _userService.GetAllAsync()
+        };
+
+        return View(viewModel);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("Title, Description, Author")] JournalDto model)
+        [Bind("Title, Subtitle, Content, UserId")]
+        JournalDto model)
     {
-        if (ModelState.IsValid)
-        {
-            var id = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(id);
-            model.UpdatedBy = Guid.Parse(id);
+        var id = _userManager.GetUserId(User);
+        model.CreatedBy = Guid.Parse(id);
+        model.UpdatedBy = Guid.Parse(id);
 
-            await _journalService.AddAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        await _journalService.AddAsync(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -57,37 +62,32 @@ public class JournalsController : Controller
             return NotFound();
         }
 
-        var journal = await _journalService.GetByIdAsync((Guid)id);
+        var journal = await _journalService.GetByIdAsync((Guid) id);
 
         if (journal == null)
         {
             return NotFound();
         }
 
+        journal.UserDtos = await _userService.GetAllAsync();
+
         return View(journal);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Description, Author")] JournalDto model)
+    public async Task<IActionResult> Edit(Guid id, JournalDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
 
-        if (ModelState.IsValid)
-        {
-            var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
-            model.UpdatedBy = Guid.Parse(userId);
-            await _journalService.UpdateAsync(model);
+        var userId = _userManager.GetUserId(User);
+        model.UpdatedBy = Guid.Parse(userId);
+        await _journalService.UpdateAsync(model);
 
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -97,14 +97,21 @@ public class JournalsController : Controller
             return NotFound();
         }
 
-        var meeting = await _journalService.GetByIdAsync((Guid)id);
+        var journal = await _journalService.GetByIdAsync((Guid) id);
 
-        if (meeting == null)
+        if (journal == null)
         {
             return NotFound();
         }
+        
+        var user = await _userService.GetByIdAsync(journal.UserId);
+        if (user != null)
+        {
+            journal.User = user;
+        }
 
-        return View(meeting);
+
+        return View(journal);
     }
 
     public async Task<IActionResult> Delete(Guid? id)
@@ -114,10 +121,16 @@ public class JournalsController : Controller
             return NotFound();
         }
 
-        var journal = await _journalService.GetByIdAsync((Guid)id);
+        var journal = await _journalService.GetByIdAsync((Guid) id);
         if (journal == null)
         {
             return NotFound();
+        }
+
+        var user = await _userService.GetByIdAsync(journal.UserId);
+        if (user != null)
+        {
+            journal.User = user;
         }
 
         return View(journal);

@@ -6,10 +6,10 @@ namespace FiveMinuteMindfulness.Core.Models;
 
 public class User : BaseUser
 {
-    public List<Assignment>? Assignments { get; set; }
-    public List<Chapter>? Chapters { get; set; }
-    public List<Journal>? Journals { get; set; }
-    public List<Notification>? Notifications { get; set; }
-    public Theme? Theme { get; set; }
-    public Guid? ThemeId { get; set; }
+    public virtual List<Assignment?> Assignments { get; set; }
+    public virtual List<Chapter?> Chapters { get; set; }
+    public virtual List<Journal?> Journals { get; set; }
+    public virtual List<Notification?> Notifications { get; set; }
+    public virtual Theme Theme { get; set; }
+    public Guid ThemeId { get; set; }
 }

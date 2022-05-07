@@ -15,6 +15,6 @@ public class CategoryService : ServiceBase<Category, CategoryDto>, ICategoryServ
 
     protected override void UpdateEntityValues(Category entity, CategoryDto entityDto)
     {
-        throw new NotImplementedException();
+        entity.Title = entityDto.Title;
     }
 }

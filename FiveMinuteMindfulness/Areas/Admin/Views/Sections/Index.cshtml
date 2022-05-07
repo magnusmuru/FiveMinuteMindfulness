@@ -3,27 +3,28 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="container">
+    <h1>Sections</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            Actions
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    @if (Model != null)
-    {
-        foreach (var item in Model)
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
         {
             <tr>
                 <td>
@@ -39,6 +40,6 @@
                 </td>
             </tr>
         }
-    }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

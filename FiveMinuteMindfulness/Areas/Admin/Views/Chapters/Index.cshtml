@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<div class="container">
+<h1>Chapters</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -14,6 +14,18 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChapterType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assignment)
         </th>
         <th>
             Actions
@@ -39,6 +51,9 @@
                     @Html.DisplayFor(model => item.ChapterType)
                 </td>
                 <td>
+                    @Html.DisplayFor(model => item.Assignment.Title)
+                </td>
+                <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -47,4 +62,4 @@
         }
     }
     </tbody>
-</table>
+</table></div>

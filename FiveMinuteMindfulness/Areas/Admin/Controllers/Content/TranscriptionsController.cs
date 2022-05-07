@@ -12,42 +12,45 @@ public class TranscriptionsController : Controller
     private ILogger<TranscriptionsController> _logger;
     private readonly ITranscriptionService _transcriptionService;
     private readonly UserManager<User> _userManager;
+    private readonly IChapterService _chapterService;
 
     public TranscriptionsController(ILogger<TranscriptionsController> logger,
         UserManager<User> userManager,
-        ITranscriptionService transcriptionService)
+        ITranscriptionService transcriptionService,
+        IChapterService chapterService)
     {
         _logger = logger;
         _userManager = userManager;
         _transcriptionService = transcriptionService;
+        _chapterService = chapterService;
     }
 
     public async Task<IActionResult> Index()
     {
-        return View(await _transcriptionService.GetAllAsync());
+        return View(await _transcriptionService.FindTranscriptionsWithChapters());
     }
 
-    public ViewResult Create()
+    public async Task<ViewResult> Create()
     {
-        return View();
+        var chapters = await _chapterService.FindChaptersWithAssignments();
+        var viewModel = new TranscriptionDto
+        {
+            ChapterDtos = chapters.Where(x => x.Transcription == null).ToList()
+        };
+
+        return View(viewModel);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(
-        [Bind("Title, Description, Author")] TranscriptionDto model)
+    public async Task<IActionResult> Create(TranscriptionDto model)
     {
-        if (ModelState.IsValid)
-        {
-            var id = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(id);
-            model.UpdatedBy = Guid.Parse(id);
+        var id = _userManager.GetUserId(User);
+        model.CreatedBy = Guid.Parse(id);
+        model.UpdatedBy = Guid.Parse(id);
 
-            await _transcriptionService.AddAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        await _transcriptionService.AddAsync(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -57,37 +60,35 @@ public class TranscriptionsController : Controller
             return NotFound();
         }
 
-        var transcription = await _transcriptionService.GetByIdAsync((Guid)id);
+        var transcription = await _transcriptionService.GetByIdAsync((Guid) id);
 
         if (transcription == null)
         {
             return NotFound();
         }
 
+        var chapters = await _chapterService.FindChaptersWithAssignments();
+
+        transcription.ChapterDtos =
+            chapters.Where(x => x.TranscriptionId == null || x.Id == transcription.ChapterId).ToList();
+
         return View(transcription);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Description, Author")] TranscriptionDto model)
+    public async Task<IActionResult> Edit(Guid id, TranscriptionDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
 
-        if (ModelState.IsValid)
-        {
-            var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
-            model.UpdatedBy = Guid.Parse(userId);
-            await _transcriptionService.UpdateAsync(model);
+        var userId = _userManager.GetUserId(User);
+        model.UpdatedBy = Guid.Parse(userId);
+        await _transcriptionService.UpdateAsync(model);
 
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -97,14 +98,20 @@ public class TranscriptionsController : Controller
             return NotFound();
         }
 
-        var meeting = await _transcriptionService.GetByIdAsync((Guid)id);
+        var transcription = await _transcriptionService.GetByIdAsync((Guid) id);
 
-        if (meeting == null)
+        if (transcription == null)
         {
             return NotFound();
         }
 
-        return View(meeting);
+        var chapter = await _chapterService.GetByIdAsync(transcription.ChapterId);
+        if (chapter != null)
+        {
+            transcription.Chapter = chapter;
+        }
+
+        return View(transcription);
     }
 
     public async Task<IActionResult> Delete(Guid? id)
@@ -114,10 +121,16 @@ public class TranscriptionsController : Controller
             return NotFound();
         }
 
-        var transcription = await _transcriptionService.GetByIdAsync((Guid)id);
+        var transcription = await _transcriptionService.GetByIdAsync((Guid) id);
         if (transcription == null)
         {
             return NotFound();
+        }
+
+        var chapter = await _chapterService.GetByIdAsync(transcription.ChapterId);
+        if (chapter != null)
+        {
+            transcription.Chapter = chapter;
         }
 
         return View(transcription);

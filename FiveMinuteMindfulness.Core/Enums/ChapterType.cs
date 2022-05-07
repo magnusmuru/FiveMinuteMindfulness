@@ -2,7 +2,7 @@ namespace FiveMinuteMindfulness.Core.Enums;
 
 public enum ChapterType
 {
-    Audio = 1,
-    Text = 2,
+    Text = 1,
+    Audio = 2,
     Video = 3
 }

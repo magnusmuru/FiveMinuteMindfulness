@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Services.Content.Interfaces;
 
 public interface IAssignmentService : IServiceBase<AssignmentDto>
 {
+    Task<List<AssignmentDto>> FindAssignmentsWithCategoriesAndSections();
 }

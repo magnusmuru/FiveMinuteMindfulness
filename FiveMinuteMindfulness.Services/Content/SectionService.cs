@@ -15,6 +15,7 @@ public class SectionService : ServiceBase<Section, SectionDto>, ISectionService
 
     protected override void UpdateEntityValues(Section entity, SectionDto entityDto)
     {
-        throw new NotImplementedException();
+        entity.Description = entityDto.Description;
+        entity.Title = entityDto.Title;
     }
 }

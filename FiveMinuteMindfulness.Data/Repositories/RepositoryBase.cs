@@ -7,31 +7,31 @@ namespace FiveMinuteMindfulness.Data.Repositories;
 public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity>
     where TEntity : class, IEntityWithId
 {
-    private readonly DbContext _context;
+    protected readonly DbContext Context;
 
     protected RepositoryBase(DbContext context)
     {
-        _context = context;
+        Context = context;
     }
 
-    private DbSet<TEntity> DbSet => _context.Set<TEntity>();
+    protected DbSet<TEntity> DbSet => Context.Set<TEntity>();
 
     public virtual async Task Add(TEntity entity)
     {
         await DbSet.AddAsync(entity);
-        await _context.SaveChangesAsync();
+        await Context.SaveChangesAsync();
     }
 
     public virtual async Task Update(TEntity entity)
     {
         await Task.Run(() => DbSet.Update(entity));
-        await _context.SaveChangesAsync();
+        await Context.SaveChangesAsync();
     }
 
     public virtual async Task Remove(TEntity entity)
     {
         await Task.Run(() => DbSet.Remove(entity));
-        await _context.SaveChangesAsync();
+        await Context.SaveChangesAsync();
     }
 
     public virtual async Task<TEntity?> Find(Guid id)
@@ -46,6 +46,6 @@ public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity>
 
     public void Dispose()
     {
-        _context.Dispose();
+        Context.Dispose();
     }
 }

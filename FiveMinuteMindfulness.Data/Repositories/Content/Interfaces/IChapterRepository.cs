@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Data.Repositories.Content.Interfaces;
 
 public interface IChapterRepository : IRepositoryBase<Chapter>
 {
+    Task<List<Chapter>> FindChaptersWithAssignments();
 }

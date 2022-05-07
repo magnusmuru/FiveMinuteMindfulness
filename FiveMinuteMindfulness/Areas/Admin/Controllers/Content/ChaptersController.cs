@@ -12,42 +12,44 @@ public class ChaptersController : Controller
     private ILogger<ChaptersController> _logger;
     private readonly IChapterService _chapterService;
     private readonly UserManager<User> _userManager;
+    private readonly IAssignmentService _assignmentService;
 
     public ChaptersController(ILogger<ChaptersController> logger,
         UserManager<User> userManager,
-        IChapterService chapterService)
+        IChapterService chapterService,
+        IAssignmentService assignmentService)
     {
         _logger = logger;
         _userManager = userManager;
         _chapterService = chapterService;
+        _assignmentService = assignmentService;
     }
 
     public async Task<IActionResult> Index()
     {
-        return View(await _chapterService.GetAllAsync());
+        return View(await _chapterService.FindChaptersWithAssignments());
     }
 
-    public ViewResult Create()
+    public async Task<ViewResult> Create()
     {
-        return View();
+        var viewModel = new ChapterDto
+        {
+            AssignmentDtos = await _assignmentService.GetAllAsync(),
+        };
+
+        return View(viewModel);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(
-        [Bind("Title, Description, Author")] ChapterDto model)
+    public async Task<IActionResult> Create(ChapterDto model)
     {
-        if (ModelState.IsValid)
-        {
-            var id = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(id);
-            model.UpdatedBy = Guid.Parse(id);
+        var id = _userManager.GetUserId(User);
+        model.CreatedBy = Guid.Parse(id);
+        model.UpdatedBy = Guid.Parse(id);
 
-            await _chapterService.AddAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        await _chapterService.AddAsync(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -57,37 +59,33 @@ public class ChaptersController : Controller
             return NotFound();
         }
 
-        var chapter = await _chapterService.GetByIdAsync((Guid)id);
+        var chapter = await _chapterService.GetByIdAsync((Guid) id);
 
         if (chapter == null)
         {
             return NotFound();
         }
 
+        chapter.AssignmentDtos = await _assignmentService.GetAllAsync();
+
         return View(chapter);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id,
-        [Bind("Title, Description, Author")] ChapterDto model)
+    public async Task<IActionResult> Edit(Guid id, ChapterDto model)
     {
         if (id != model.Id)
         {
             return NotFound();
         }
 
-        if (ModelState.IsValid)
-        {
-            var userId = _userManager.GetUserId(User);
-            model.CreatedBy = Guid.Parse(userId);
-            model.UpdatedBy = Guid.Parse(userId);
-            await _chapterService.UpdateAsync(model);
+        var userId = _userManager.GetUserId(User);
+        model.CreatedBy = Guid.Parse(userId);
+        model.UpdatedBy = Guid.Parse(userId);
+        await _chapterService.UpdateAsync(model);
 
-            return RedirectToAction(nameof(Index));
-        }
-
-        return View(model);
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -97,14 +95,20 @@ public class ChaptersController : Controller
             return NotFound();
         }
 
-        var meeting = await _chapterService.GetByIdAsync((Guid)id);
+        var chapter = await _chapterService.GetByIdAsync((Guid) id);
 
-        if (meeting == null)
+        if (chapter == null)
         {
             return NotFound();
         }
+        
+        var assignment = await _assignmentService.GetByIdAsync(chapter.AssignmentId);
+        if (assignment != null)
+        {
+            chapter.Assignment = assignment;
+        }
 
-        return View(meeting);
+        return View(chapter);
     }
 
     public async Task<IActionResult> Delete(Guid? id)
@@ -114,10 +118,16 @@ public class ChaptersController : Controller
             return NotFound();
         }
 
-        var chapter = await _chapterService.GetByIdAsync((Guid)id);
+        var chapter = await _chapterService.GetByIdAsync((Guid) id);
         if (chapter == null)
         {
             return NotFound();
+        }
+        
+        var assignment = await _assignmentService.GetByIdAsync(chapter.AssignmentId);
+        if (assignment != null)
+        {
+            chapter.Assignment = assignment;
         }
 
         return View(chapter);
