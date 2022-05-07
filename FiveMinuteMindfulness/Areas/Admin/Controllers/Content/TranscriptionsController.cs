@@ -45,12 +45,18 @@ public class TranscriptionsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(TranscriptionDto model)
     {
-        var id = _userManager.GetUserId(User);
-        model.CreatedBy = Guid.Parse(id);
-        model.UpdatedBy = Guid.Parse(id);
+        ModelStateRemoval();
+        if (ModelState.IsValid)
+        {
+            var id = _userManager.GetUserId(User);
+            model.CreatedBy = Guid.Parse(id);
+            model.UpdatedBy = Guid.Parse(id);
 
-        await _transcriptionService.AddAsync(model);
-        return RedirectToAction(nameof(Index));
+            await _transcriptionService.AddAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -84,11 +90,18 @@ public class TranscriptionsController : Controller
             return NotFound();
         }
 
-        var userId = _userManager.GetUserId(User);
-        model.UpdatedBy = Guid.Parse(userId);
-        await _transcriptionService.UpdateAsync(model);
+        ModelStateRemoval();
 
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var userId = _userManager.GetUserId(User);
+            model.UpdatedBy = Guid.Parse(userId);
+            await _transcriptionService.UpdateAsync(model);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -146,5 +159,11 @@ public class TranscriptionsController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+    private void ModelStateRemoval()
+    {
+        ModelState.Remove("Chapter");
+        ModelState.Remove("ChapterDtos");
     }
 }

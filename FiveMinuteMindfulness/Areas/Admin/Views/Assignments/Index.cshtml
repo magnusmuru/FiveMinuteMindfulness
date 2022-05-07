@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 <div class="container">
-    <h1>Assignments</h1>
+    <h1>@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Assignments</h1>
 
     <p>
-        <a asp-action="Create">Create New</a>
+        <a asp-action="Create">@FiveMinuteMindfulness.Resources.Web.Common.CreateNew</a>
     </p>
     <table class="table">
         <thead>
@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.Section)
             </th>
             <th>
-                Actions
+                @FiveMinuteMindfulness.Resources.Web.Common.Actions
             </th>
         </tr>
         </thead>
@@ -63,9 +63,9 @@
                         @Html.DisplayFor(model => item.Section.Title)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Delete</a>
                     </td>
                 </tr>
             }

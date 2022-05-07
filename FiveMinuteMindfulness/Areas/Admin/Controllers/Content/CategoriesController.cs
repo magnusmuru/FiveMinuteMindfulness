@@ -75,7 +75,7 @@ public class CategoriesController : Controller
         {
             return NotFound();
         }
-        
+
         ModelState.Remove("Assignments");
 
         if (ModelState.IsValid)
@@ -97,14 +97,14 @@ public class CategoriesController : Controller
             return NotFound();
         }
 
-        var meeting = await _categoryService.GetByIdAsync((Guid) id);
+        var category = await _categoryService.GetByIdAsync((Guid) id);
 
-        if (meeting == null)
+        if (category == null)
         {
             return NotFound();
         }
 
-        return View(meeting);
+        return View(category);
     }
 
     public async Task<IActionResult> Delete(Guid? id)

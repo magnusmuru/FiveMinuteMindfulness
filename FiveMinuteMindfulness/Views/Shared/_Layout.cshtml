@@ -23,49 +23,51 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Privacy</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Admin
+                            @FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Admin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Categories" asp-action="Index">Categories</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Categories" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sections" asp-action="Index">Sections</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sections" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Sections</a>
                             </li>
                             <li>
                                 <br/>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Assignments" asp-action="Index">Assignments</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Assignments" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Assignments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Chapters" asp-action="Index">Chapters</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Chapters" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Chapters</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Transcriptions" asp-action="Index">Transcriptions</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Transcriptions" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Transcriptions</a>
                             </li>
                             <li>
                                 <br/>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Journals" asp-action="Index">Journals</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Journals" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Journals</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Notifications" asp-action="Index">Notifications</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Notifications" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Notifications</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Themes" asp-action="Index">Themes</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Themes" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Themes</a>
                             </li>
                         </ul>
                     </li>
+
+                    <partial name="_LanguageSelection"/>
 
                 </ul>
                 <partial name="_LoginPartial"/>
@@ -80,7 +82,7 @@
 </div>
 <footer class="border-top footer text-muted bg-light">
     <div class="container">
-        &copy; 2022 - FiveMinuteMindfulness - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2022 - FiveMinuteMindfulness
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

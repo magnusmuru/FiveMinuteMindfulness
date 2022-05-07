@@ -6,8 +6,7 @@ namespace FiveMinuteMindfulness.Core.Models.Content;
 
 public class Chapter : AuditEntity
 {
-    [MaxLength(128)]
-    public string Title { get; set; }
+    [MaxLength(128)] public string Title { get; set; }
     public string Description { get; set; }
     public string Author { get; set; }
     public bool IsCompleted { get; set; }

@@ -37,7 +37,7 @@ public abstract class ServiceBase<TEntity, TEntityDto> : IServiceBase<TEntityDto
     public async Task<TEntityDto> AddAsync(TEntityDto entityDto)
     {
         entityDto.Id = Guid.NewGuid();
-        
+
         if (entityDto.CreatedBy == Guid.Empty)
         {
             entityDto.CreatedBy = new Guid(UserConstant.SystemUserId);

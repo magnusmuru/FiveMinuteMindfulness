@@ -1,0 +1,161 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="HiYou" xml:space="preserve">
+        <value>Tere sina.</value>
+    </data>
+    <data name="Paragraph1" xml:space="preserve">
+        <value>Igapäevaelu kiirel kiirusel on lihtne oma käekäigust mööda vaadata. Oma vaimse tervise eest hoolitsemist ja tähelepanelikkust reklaamitakse kõikjal, kuid inimesed muutuvad iga päevaga üha rahulolematumaks.</value>
+    </data>
+    <data name="Paragraph2" xml:space="preserve">
+        <value>See pani meid mõistma, et peaksime üle vaatama, kuidas me suhtume tähelepanelikkusesse ja vaimsesse tervisesse üldiselt. Meie eesmärk on vaadata üle viis, kuidas me läheneme tähelepanelikkusele ja aidata teil püüda olla enda kõige tervislikum versioon.</value>
+    </data>
+    <data name="Paragraph3" xml:space="preserve">
+        <value>See on teie teekond ja me oleme siin ainult selleks, et sõita. Ärge muretsege, me oleme siin selleks, et anda juhiseid selle kohta, mida otsida, laskmata teil liiga kauaks kõikide teadmiste metsas eksida.</value>
+    </data>
+    <data name="Start" xml:space="preserve">
+        <value>Alusta oma teekonda</value>
+    </data>
+    <data name="PrivacyPolicy" xml:space="preserve">
+        <value>Privaatsuspoliitika</value>
+    </data>
+    <data name="PrivacyPolicyText" xml:space="preserve">
+        <value>FiveMinuteMindfulnessis, millele pääseb juurde aadressilt https://www.fiveminutemindfulness.com, on üks meie peamisi prioriteete meie külastajate privaatsus. See privaatsuspoliitika dokument sisaldab teavet, mida FiveMinuteMindfulness kogub ja salvestab ning kuidas me seda kasutame.
+
+Kui teil on lisaküsimusi või vajate meie privaatsuspoliitika kohta lisateavet, võtke meiega ühendust.
+
+See privaatsuspoliitika kehtib ainult meie veebitegevuste kohta ja kehtib meie veebisaidi külastajatele seoses teabega, mida nad FiveMinuteMindfulnessis jagasid ja/või koguvad. See poliitika ei kehti teabe kohta, mida kogutakse võrguühenduseta või muude kanalite kaudu peale selle veebisaidi. Meie privaatsuspoliitika loodi tasuta privaatsuspoliitika generaatori abiga.
+
+Nõusolek
+Meie veebisaiti kasutades nõustute käesolevaga meie privaatsuspoliitikaga ja nõustute selle tingimustega.
+
+Teave, mida kogume
+Isikuandmed, mida teil palutakse esitada, ja põhjused, miks teil seda palutakse, tehakse teile selgeks hetkel, mil palume teil esitada oma isikuandmed.
+
+Kui võtate meiega otse ühendust, võime saada teie kohta lisateavet, nagu teie nimi, e-posti aadress, telefoninumber, sõnumi ja/või manuste sisu, mille võite meile saata, ja mis tahes muud teavet, mille võite esitada.
+
+Kui registreerite konto, võime küsida teie kontaktteavet, sealhulgas selliseid andmeid nagu nimi, ettevõtte nimi, aadress, e-posti aadress ja telefoninumber.
+
+Kuidas me teie teavet kasutame
+Kasutame kogutavat teavet mitmel viisil, sealhulgas:
+
+Pakkuda, käitada ja hooldada meie veebisaiti
+Täiustage, isikupärastage ja laiendage meie veebisaiti
+Saate aru ja analüüsige, kuidas te meie veebisaiti kasutate
+Arendage uusi tooteid, teenuseid, funktsioone ja funktsioone
+Suhtleme teiega kas otse või mõne meie partneri kaudu, sealhulgas klienditeeninduse eesmärgil, et pakkuda teile veebisaidiga seotud värskendusi ja muud teavet ning turundus- ja reklaamieesmärkidel
+Saada teile e-kirju
+Pettuste leidmine ja ärahoidmine
+Logifailid
+FiveMinuteMindfulness järgib logifailide kasutamise tavapärast protseduuri. Need failid logivad külastajaid, kui nad veebisaite külastavad. Kõik hostimisettevõtted teevad seda ja osa hostimisteenuste analüüsist. Logifailide kogutav teave sisaldab Interneti-protokolli (IP) aadresse, brauseri tüüpi, Interneti-teenuse pakkujat (ISP), kuupäeva ja kellaaja templit, viitavaid/väljuvaid lehti ja võib-olla ka klikkide arvu. Need ei ole seotud ühegi isikut tuvastava teabega. Teabe eesmärk on suundumuste analüüsimine, saidi haldamine, kasutajate liikumise jälgimine veebisaidil ja demograafilise teabe kogumine.
+
+Küpsised ja veebimajakad
+Nagu iga teine ​​veebisait, kasutab FiveMinuteMindfulness küpsiseid. Neid küpsiseid kasutatakse teabe, sealhulgas külastajate eelistuste ja veebisaidi lehtede salvestamiseks, mida külastaja külastas või külastas. Seda teavet kasutatakse kasutajate kogemuse optimeerimiseks, kohandades meie veebilehe sisu vastavalt külastaja brauseri tüübile ja/või muule teabele.
+
+Üldisema teabe saamiseks küpsiste kohta lugege küpsiste artiklit veebisaidil Generate Privacy Policy.
+
+Reklaamipartnerite privaatsuspoliitika
+Saate vaadata seda loendit, et leida iga FiveMinuteMindfulnessi reklaamipartneri privaatsuspoliitika.
+
+Kolmandate osapoolte reklaamiserverid või reklaamivõrgud kasutavad tehnoloogiaid, nagu küpsised, JavaScript või veebimajakad, mida kasutatakse nende vastavates reklaamides ja FiveMinuteMindfulnessis kuvatavates linkides, mis saadetakse otse kasutajate brauserisse. Kui see juhtub, saavad nad teie IP-aadressi automaatselt. Neid tehnoloogiaid kasutatakse nende reklaamikampaaniate tõhususe mõõtmiseks ja/või külastatavatel veebisaitidel kuvatava reklaamisisu isikupärastamiseks.
+
+Pange tähele, et FiveMinuteMindfulnessil ei ole juurdepääsu ega kontrolli nendele küpsistele, mida kasutavad kolmandatest osapooltest reklaamijad.
+
+Kolmanda osapoole privaatsuspoliitika
+FiveMinuteMindfulnessi privaatsuspoliitika ei kehti teistele reklaamijatele ega veebisaitidele. Seetõttu soovitame teil üksikasjalikuma teabe saamiseks tutvuda nende kolmandate osapoolte reklaamiserverite vastavate privaatsuseeskirjadega. See võib sisaldada nende tavasid ja juhiseid teatud valikutest loobumise kohta.
+
+Saate küpsised keelata oma brauseri individuaalsete valikute kaudu. Täpsema teabe saamiseks küpsiste haldamise kohta konkreetsete veebibrauseritega leiate selle brauserite vastavatelt veebisaitidelt.
+
+CCPA privaatsusõigused (ära müü minu isikuandmeid)
+CCPA alusel on California tarbijatel muuhulgas õigus:
+
+Nõuda, et ettevõtja, kes kogub tarbija isikuandmeid, avalikustaks kategooriad ja konkreetsed isikuandmete osad, mida ettevõte on tarbijate kohta kogunud.
+
+Taotlege, et ettevõte kustutaks kõik tarbija isikuandmed, mida ettevõte on kogunud.
+
+Nõuda, et ettevõtja, kes müüb tarbija isikuandmeid, mitte müüb tarbija isikuandmeid. Kui esitate taotluse, on meil teile vastamiseks aega üks kuu. Kui soovite mõnda neist õigustest kasutada, võtke meiega ühendust.
+
+GDPR andmekaitseõigused
+Soovime veenduda, et olete täielikult teadlik kõigist oma andmekaitseõigustest. Igal kasutajal on õigus järgmisele:
+
+Juurdepääsuõigus – Teil on õigus nõuda oma isikuandmete koopiaid. Võime selle teenuse eest küsida väikest tasu.
+
+Õigus andmete parandamisele – teil on õigus nõuda, et me parandaksime mis tahes teabe, mis teie arvates on ebatäpne. Samuti on teil õigus nõuda, et täiendaksime teavet, mis teie arvates on puudulik.
+
+Õigus kustutamisele – teil on teatud tingimustel õigus nõuda, et me kustutaksime teie isikuandmed.
+
+Õigus piirata töötlemist – Teil on õigus nõuda, et me piiraksime teie isikuandmete töötlemist teatud tingimustel.
+
+Õigus esitada vastuväiteid töötlemisele – teil on teatud tingimustel õigus esitada vastuväiteid teie isikuandmete töötlemisele meie poolt.
+
+Õigus andmete teisaldatavusele – Teil on õigus nõuda, et me edastaksime kogutud andmed teatud tingimustel teisele organisatsioonile või otse teile.
+
+Kui esitate taotluse, on meil teile vastamiseks aega üks kuu. Kui soovite mõnda neist õigustest kasutada, võtke meiega ühendust.
+
+Laste teave
+Teine osa meie prioriteedist on laste kaitse lisamine Interneti kasutamise ajal. Julgustame vanemaid ja eestkostjaid oma veebitegevust jälgima, selles osalema ja/või jälgima ja juhendama.
+
+FiveMinuteMindfulness ei kogu alla 13-aastastelt lastelt teadlikult isikut tuvastavat teavet. Kui arvate, et teie laps esitas meie veebisaidil sellist teavet, soovitame teil meiega viivitamatult ühendust võtta ja teeme kõik endast oleneva, et teave viivitamatult eemaldada. selline teave meie registritest.</value>
+    </data>
+    <data name="CreateNew" xml:space="preserve">
+        <value>Loo Uus</value>
+    </data>
+    <data name="Actions" xml:space="preserve">
+        <value>Tegevused</value>
+    </data>
+    <data name="Edit" xml:space="preserve">
+        <value>Muuda</value>
+    </data>
+    <data name="Delete" xml:space="preserve">
+        <value>Kustuta</value>
+    </data>
+    <data name="Details" xml:space="preserve">
+        <value>Detailid</value>
+    </data>
+    <data name="Create" xml:space="preserve">
+        <value>Loo</value>
+    </data>
+    <data name="BackToList" xml:space="preserve">
+        <value>Tagasi nimekirja</value>
+    </data>
+    <data name="Save" xml:space="preserve">
+        <value>Salvesta</value>
+    </data>
+    <data name="Journal" xml:space="preserve">
+        <value>Päevik</value>
+    </data>
+    <data name="Chapter" xml:space="preserve">
+        <value>Peatükk</value>
+    </data>
+    <data name="Section" xml:space="preserve">
+        <value>Sektsioon</value>
+    </data>
+    <data name="Assignment" xml:space="preserve">
+        <value>Ülesanne</value>
+    </data>
+    <data name="Notification" xml:space="preserve">
+        <value>Teavitus</value>
+    </data>
+    <data name="Theme" xml:space="preserve">
+        <value>Kujundus</value>
+    </data>
+    <data name="Transcription" xml:space="preserve">
+        <value>Transkriptsioon</value>
+    </data>
+    <data name="Category" xml:space="preserve">
+        <value>Kategooria</value>
+    </data>
+    <data name="DeleteConfirmation" xml:space="preserve">
+        <value>Oled kindel, et soovid seda kustutada?</value>
+    </data>
+</root>

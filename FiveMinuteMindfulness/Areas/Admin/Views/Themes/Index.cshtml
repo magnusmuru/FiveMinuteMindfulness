@@ -4,50 +4,51 @@
     ViewData["Title"] = "Index";
 }
 <div class="container">
-<h1>Themes</h1>
+    <h1>@FiveMinuteMindfulness.Resources.Web.Views.Shared._Layout.Themes</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ColorPalette)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User)
-        </th>
-        <th>
-            Actions
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    @if (Model != null)
-    {
-        foreach (var item in Model)
+    <p>
+        <a asp-action="Create">@FiveMinuteMindfulness.Resources.Web.Common.CreateNew</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorPalette)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @FiveMinuteMindfulness.Resources.Web.Common.Actions
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Url)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ColorPalette)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Username)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Url)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ColorPalette)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Username)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Delete</a>
+                    </td>
+                </tr>
+            }
         }
-    }
-    </tbody>
-</table></div>
+        </tbody>
+    </table>
+</div>

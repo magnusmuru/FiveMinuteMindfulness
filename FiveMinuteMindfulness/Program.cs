@@ -1,8 +1,11 @@
+using System.Globalization;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Data;
 using FiveMinuteMindfulness.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +42,34 @@ builder.Host.UseSerilog((context, loggerConfiguration) => loggerConfiguration
 builder.Services.AddDataServices();
 builder.Services.AddApplicationServices();
 
+// I18N
+var supportedCultures = builder.Configuration
+    .GetSection("SupportedCultures")
+    .GetChildren()
+    .Select(x => new CultureInfo(x.Value))
+    .ToArray();
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    // datetime and currency support
+    options.SupportedCultures = supportedCultures;
+    // UI translated strings
+    options.SupportedUICultures = supportedCultures;
+    // if nothing is found, use this
+    options.DefaultRequestCulture =
+        new RequestCulture(builder.Configuration["DefaultCulture"],
+            builder.Configuration["DefaultCulture"]);
+
+    options.SetDefaultCulture(builder.Configuration["DefaultCulture"]);
+
+    options.RequestCultureProviders = new List<IRequestCultureProvider>
+    {
+        // Order is important, its in which order they will be evaluated
+        new QueryStringRequestCultureProvider(),
+        new CookieRequestCultureProvider()
+    };
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -57,6 +88,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseRequestLocalization(options: app.Services.GetService<IOptions<RequestLocalizationOptions>>()?.Value!);
+
 
 app.UseAuthentication();
 app.UseAuthorization();

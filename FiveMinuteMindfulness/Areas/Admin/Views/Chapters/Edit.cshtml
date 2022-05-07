@@ -1,5 +1,3 @@
-@using FiveMinuteMindfulness.Core.Enums
-@using FiveMinuteMindfulness.Core.Dto.Content
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model FiveMinuteMindfulness.Core.Dto.Content.ChapterDto
 
@@ -7,46 +5,19 @@
     ViewData["Title"] = "Edit";
 }
 <div class="container">
-    <h1>Edit</h1>
+    <h1>@FiveMinuteMindfulness.Resources.Web.Common.Edit</h1>
 
-    <h4>Chapter</h4>
+    <h4>@FiveMinuteMindfulness.Resources.Web.Common.Chapter</h4>
     <hr/>
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Edit">
                 <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control"/>
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    <input asp-for="Description" class="form-control"/>
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Author" class="control-label"></label>
-                    <input asp-for="Author" class="form-control"/>
-                    <span asp-validation-for="Author" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ChapterType" class="control-label"></label>
-                    <select asp-for="ChapterType" class="form-select" asp-items="Html.GetEnumSelectList<ChapterType>()">
-                    </select>
-                    <span asp-validation-for="ChapterType" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Assignment" class="control-label"></label>
-                    <select asp-for="AssignmentId" class="form-select" asp-items="@(new SelectList(Model.AssignmentDtos, nameof(AssignmentDto.Id), nameof(AssignmentDto.Title)))">
-                    </select>
-                    <span asp-validation-for="AssignmentId" class="text-danger"></span>
-                </div>
-                <br/>
+                <partial name="_CreateEdit" model="Model"/>
                 <input type="hidden" asp-for="Id"/>
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary"/> |
-                    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+                    <input type="submit" value="@FiveMinuteMindfulness.Resources.Web.Common.Save" class="btn btn-primary"/> |
+                    <a class="btn btn-secondary" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Common.BackToList</a>
                 </div>
             </form>
         </div>

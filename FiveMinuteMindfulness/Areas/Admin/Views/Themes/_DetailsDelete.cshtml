@@ -1,0 +1,24 @@
+﻿@model FiveMinuteMindfulness.Core.Dto.Application.ThemeDto
+
+<h4>@FiveMinuteMindfulness.Resources.Web.Common.Theme</h4>
+<hr/>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Url)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Url)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.ColorPalette)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ColorPalette)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.User)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.User.Username)
+    </dd>
+</dl>

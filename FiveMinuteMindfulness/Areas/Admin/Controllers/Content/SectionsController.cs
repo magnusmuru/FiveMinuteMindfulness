@@ -58,7 +58,7 @@ public class SectionsController : Controller
             return NotFound();
         }
 
-        var section = await _sectionService.GetByIdAsync((Guid)id);
+        var section = await _sectionService.GetByIdAsync((Guid) id);
 
         if (section == null)
         {
@@ -76,7 +76,7 @@ public class SectionsController : Controller
         {
             return NotFound();
         }
-        
+
         ModelState.Remove("Assignments");
 
         if (ModelState.IsValid)
@@ -98,7 +98,7 @@ public class SectionsController : Controller
             return NotFound();
         }
 
-        var section = await _sectionService.GetByIdAsync((Guid)id);
+        var section = await _sectionService.GetByIdAsync((Guid) id);
 
         if (section == null)
         {
@@ -115,7 +115,7 @@ public class SectionsController : Controller
             return NotFound();
         }
 
-        var section = await _sectionService.GetByIdAsync((Guid)id);
+        var section = await _sectionService.GetByIdAsync((Guid) id);
         if (section == null)
         {
             return NotFound();

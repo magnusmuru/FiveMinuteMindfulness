@@ -44,12 +44,19 @@ public class ChaptersController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(ChapterDto model)
     {
-        var id = _userManager.GetUserId(User);
-        model.CreatedBy = Guid.Parse(id);
-        model.UpdatedBy = Guid.Parse(id);
+        ModelStateRemoval();
 
-        await _chapterService.AddAsync(model);
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var id = _userManager.GetUserId(User);
+            model.CreatedBy = Guid.Parse(id);
+            model.UpdatedBy = Guid.Parse(id);
+
+            await _chapterService.AddAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -80,12 +87,18 @@ public class ChaptersController : Controller
             return NotFound();
         }
 
-        var userId = _userManager.GetUserId(User);
-        model.CreatedBy = Guid.Parse(userId);
-        model.UpdatedBy = Guid.Parse(userId);
-        await _chapterService.UpdateAsync(model);
+        ModelStateRemoval();
 
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var userId = _userManager.GetUserId(User);
+            model.UpdatedBy = Guid.Parse(userId);
+            await _chapterService.UpdateAsync(model);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -101,7 +114,7 @@ public class ChaptersController : Controller
         {
             return NotFound();
         }
-        
+
         var assignment = await _assignmentService.GetByIdAsync(chapter.AssignmentId);
         if (assignment != null)
         {
@@ -123,7 +136,7 @@ public class ChaptersController : Controller
         {
             return NotFound();
         }
-        
+
         var assignment = await _assignmentService.GetByIdAsync(chapter.AssignmentId);
         if (assignment != null)
         {
@@ -143,5 +156,14 @@ public class ChaptersController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+    private void ModelStateRemoval()
+    {
+        ModelState.Remove("Assignment");
+        ModelState.Remove("AssignmentDtos");
+        ModelState.Remove("Transcription");
+        ModelState.Remove("TranscriptionId");
+        ModelState.Remove("Users");
     }
 }

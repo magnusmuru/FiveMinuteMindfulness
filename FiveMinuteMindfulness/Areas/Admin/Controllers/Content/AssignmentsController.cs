@@ -46,14 +46,22 @@ public class AssignmentsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(AssignmentDto model)
+    public async Task<IActionResult> Create(
+        AssignmentDto model)
     {
-        var id = _userManager.GetUserId(User);
-        model.CreatedBy = Guid.Parse(id);
-        model.UpdatedBy = Guid.Parse(id);
+        ModelStateRemoval();
 
-        await _assignmentService.AddAsync(model);
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var id = _userManager.GetUserId(User);
+            model.CreatedBy = Guid.Parse(id);
+            model.UpdatedBy = Guid.Parse(id);
+
+            await _assignmentService.AddAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -81,16 +89,22 @@ public class AssignmentsController : Controller
     public async Task<IActionResult> Edit(Guid id,
         AssignmentDto model)
     {
-        if (id != model.Id)
+        ModelStateRemoval();
+        if (ModelState.IsValid)
         {
-            return NotFound();
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+
+            var userId = _userManager.GetUserId(User);
+            model.UpdatedBy = Guid.Parse(userId);
+            await _assignmentService.UpdateAsync(model);
+
+            return RedirectToAction(nameof(Index));
         }
 
-        var userId = _userManager.GetUserId(User);
-        model.UpdatedBy = Guid.Parse(userId);
-        await _assignmentService.UpdateAsync(model);
-
-        return RedirectToAction(nameof(Index));
+        return View(model);
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -166,5 +180,16 @@ public class AssignmentsController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+    private void ModelStateRemoval()
+    {
+        ModelState.Remove("Chapters");
+        ModelState.Remove("Users");
+        ModelState.Remove("Section");
+        ModelState.Remove("SectionDtos");
+        ModelState.Remove("Category");
+        ModelState.Remove("CategoryDtos");
+        ModelState.Remove("Chapters");
     }
 }

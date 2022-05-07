@@ -78,16 +78,23 @@ public class JournalsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(Guid id, JournalDto model)
     {
-        if (id != model.Id)
+        ModelStateRemoval();
+
+        if (ModelState.IsValid)
         {
-            return NotFound();
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+
+            var userId = _userManager.GetUserId(User);
+            model.UpdatedBy = Guid.Parse(userId);
+            await _journalService.UpdateAsync(model);
+
+            return RedirectToAction(nameof(Index));
         }
 
-        var userId = _userManager.GetUserId(User);
-        model.UpdatedBy = Guid.Parse(userId);
-        await _journalService.UpdateAsync(model);
-
-        return RedirectToAction(nameof(Index));
+        return View(model);
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -103,7 +110,7 @@ public class JournalsController : Controller
         {
             return NotFound();
         }
-        
+
         var user = await _userService.GetByIdAsync(journal.UserId);
         if (user != null)
         {
@@ -146,5 +153,12 @@ public class JournalsController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+
+    private void ModelStateRemoval()
+    {
+        ModelState.Remove("User");
+        ModelState.Remove("UserDtos");
     }
 }

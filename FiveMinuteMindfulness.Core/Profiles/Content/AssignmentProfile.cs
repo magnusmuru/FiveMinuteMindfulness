@@ -5,5 +5,4 @@ namespace FiveMinuteMindfulness.Core.Profiles.Content;
 
 public class AssignmentProfile : BaseProfile<Assignment, AssignmentDto>
 {
-    
 }

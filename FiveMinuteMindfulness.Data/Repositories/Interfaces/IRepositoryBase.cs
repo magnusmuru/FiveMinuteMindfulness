@@ -12,6 +12,6 @@ public interface IRepositoryBase<TEntity> : IDisposable
     Task Remove(TEntity entity);
 
     Task<TEntity?> Find(Guid id);
-    
+
     Task<IList<TEntity>> FindAll();
 }

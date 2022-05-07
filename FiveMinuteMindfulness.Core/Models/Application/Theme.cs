@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using FiveMinuteMindfulness.Core.Domain;
 
 namespace FiveMinuteMindfulness.Core.Models.Application;

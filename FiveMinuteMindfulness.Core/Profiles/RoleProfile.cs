@@ -5,5 +5,4 @@ namespace FiveMinuteMindfulness.Core.Profiles;
 
 public class RoleProfile : BaseProfile<Role, RoleDto>
 {
-
 }

@@ -44,15 +44,21 @@ public class NotificationsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("NotificationType, Content, UserId")]
         NotificationDto model)
     {
-        var id = _userManager.GetUserId(User);
-        model.CreatedBy = Guid.Parse(id);
-        model.UpdatedBy = Guid.Parse(id);
+        ModelStateRemoval();
 
-        await _notificationService.AddAsync(model);
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var id = _userManager.GetUserId(User);
+            model.CreatedBy = Guid.Parse(id);
+            model.UpdatedBy = Guid.Parse(id);
+
+            await _notificationService.AddAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -83,11 +89,18 @@ public class NotificationsController : Controller
             return NotFound();
         }
 
-        var userId = _userManager.GetUserId(User);
-        model.UpdatedBy = Guid.Parse(userId);
-        await _notificationService.UpdateAsync(model);
+        ModelStateRemoval();
 
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var userId = _userManager.GetUserId(User);
+            model.UpdatedBy = Guid.Parse(userId);
+            await _notificationService.UpdateAsync(model);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -145,5 +158,11 @@ public class NotificationsController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+    private void ModelStateRemoval()
+    {
+        ModelState.Remove("User");
+        ModelState.Remove("UserDtos");
     }
 }

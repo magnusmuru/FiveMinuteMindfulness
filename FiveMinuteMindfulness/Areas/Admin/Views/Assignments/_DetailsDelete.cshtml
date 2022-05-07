@@ -1,0 +1,47 @@
+﻿@model FiveMinuteMindfulness.Core.Dto.Content.AssignmentDto
+
+<div>
+    <h4>@FiveMinuteMindfulness.Resources.Web.Common.Assignment</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        @if (Model.Category != null)
+        {
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Category!.Title)
+            </dd>
+        }
+        else
+        {
+            <dd class="col-sm-10">
+                No category
+            </dd>
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Section)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Section.Title)
+        </dd>
+    </dl>
+</div>

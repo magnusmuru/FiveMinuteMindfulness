@@ -43,15 +43,21 @@ public class ThemesController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(
-        [Bind("Url, ColorPalette, UserId")] ThemeDto model)
+    public async Task<IActionResult> Create(ThemeDto model)
     {
-        var id = _userManager.GetUserId(User);
-        model.CreatedBy = Guid.Parse(id);
-        model.UpdatedBy = Guid.Parse(id);
+        ModelStateRemoval();
 
-        await _themeService.AddAsync(model);
-        return RedirectToAction(nameof(Index));
+        if (ModelState.IsValid)
+        {
+            var id = _userManager.GetUserId(User);
+            model.CreatedBy = Guid.Parse(id);
+            model.UpdatedBy = Guid.Parse(id);
+
+            await _themeService.AddAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Edit(Guid? id)
@@ -81,12 +87,19 @@ public class ThemesController : Controller
         {
             return NotFound();
         }
-        
-        var userId = _userManager.GetUserId(User);
-        model.UpdatedBy = Guid.Parse(userId);
-        await _themeService.UpdateAsync(model);
 
-        return RedirectToAction(nameof(Index));
+        ModelStateRemoval();
+
+        if (ModelState.IsValid)
+        {
+            var userId = _userManager.GetUserId(User);
+            model.UpdatedBy = Guid.Parse(userId);
+            await _themeService.UpdateAsync(model);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(model);
     }
 
     public async Task<IActionResult> Details(Guid? id)
@@ -144,5 +157,12 @@ public class ThemesController : Controller
         }
 
         return RedirectToAction(nameof(Index));
+    }
+
+
+    private void ModelStateRemoval()
+    {
+        ModelState.Remove("User");
+        ModelState.Remove("UserDtos");
     }
 }

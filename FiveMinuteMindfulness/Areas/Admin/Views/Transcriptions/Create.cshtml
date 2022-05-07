@@ -1,34 +1,21 @@
-@using FiveMinuteMindfulness.Core.Dto.Content
 @model FiveMinuteMindfulness.Core.Dto.Content.TranscriptionDto
 
 @{
     ViewData["Title"] = "Create";
 }
 <div class="container">
-    <h1>Create</h1>
+    <h1>@FiveMinuteMindfulness.Resources.Web.Common.CreateNew</h1>
 
-    <h4>Transcription</h4>
+    <h4>@FiveMinuteMindfulness.Resources.Web.Common.Transcription</h4>
     <hr/>
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <partial name="_CreateEdit" model="Model"/>
                 <div class="form-group">
-                    <label asp-for="Content" class="control-label"></label>
-                    <input asp-for="Content" class="form-control"/>
-                    <span asp-validation-for="Content" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Chapter" class="control-label"></label>
-                    <select asp-for="ChapterId" class="form-select" asp-items="@(new SelectList(Model.ChapterDtos, nameof(ChapterDto.Id), nameof(ChapterDto.Title)))">
-                        <option>Select Chapter</option>
-                    </select>
-                    <span asp-validation-for="ChapterId" class="text-danger"></span>
-                </div>
-                <br/>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary"/> |
-                    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+                    <input type="submit" value="@FiveMinuteMindfulness.Resources.Web.Common.Create" class="btn btn-primary"/> |
+                    <a class="btn btn-secondary" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Common.BackToList</a>
                 </div>
             </form>
         </div>

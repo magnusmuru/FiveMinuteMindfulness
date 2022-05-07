@@ -1,4 +1,3 @@
-@using FiveMinuteMindfulness.Core.Dto
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model FiveMinuteMindfulness.Core.Dto.Application.ThemeDto
 
@@ -6,41 +5,26 @@
     ViewData["Title"] = "Edit";
 }
 <div class="container">
-<h1>Edit</h1>
+    <h1>@FiveMinuteMindfulness.Resources.Web.Common.Edit</h1>
 
-<h4>Theme</h4>
-<hr/>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Url" class="control-label"></label>
-                <input asp-for="Url" class="form-control"/>
-                <span asp-validation-for="Url" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ColorPalette" class="control-label"></label>
-                <input asp-for="ColorPalette" class="form-control"/>
-                <span asp-validation-for="ColorPalette" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User" class="control-label"></label>
-                <select asp-for="UserId" class="form-select" asp-items="@(new SelectList(Model.UserDtos, nameof(UserDto.Id), nameof(UserDto.Username)))">
-                    <option>Select User</option>
-                </select>
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
-            <br/>
-            <input type="hidden" asp-for="Id"/>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary"/> |
-                <a class="btn btn-secondary" asp-action="Index">Back to List</a>
-            </div>
-        </form>
+    <h4>@FiveMinuteMindfulness.Resources.Web.Common.Theme</h4>
+    <hr/>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <partial name="_CreateEdit" model="Model"/>
+                <input type="hidden" asp-for="Id"/>
+                <div class="form-group">
+                    <input type="submit" value="@FiveMinuteMindfulness.Resources.Web.Common.Save" class="btn btn-primary"/> |
+                    <a class="btn btn-secondary" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Common.BackToList</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-@section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-}</div>
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+
+</div>

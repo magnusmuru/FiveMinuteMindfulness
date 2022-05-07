@@ -3,6 +3,6 @@ using FiveMinuteMindfulness.Services.Domain.Interfaces;
 
 namespace FiveMinuteMindfulness.Services.Content.Interfaces;
 
-public interface ICategoryService: IServiceBase<CategoryDto>
+public interface ICategoryService : IServiceBase<CategoryDto>
 {
 }

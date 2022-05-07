@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Language" xml:space="preserve">
+        <value>Language</value>
+    </data>
+    <data name="Admin" xml:space="preserve">
+        <value>Admin</value>
+    </data>
+    <data name="Home" xml:space="preserve">
+        <value>Home</value>
+    </data>
+    <data name="Privacy" xml:space="preserve">
+        <value>Privacy</value>
+    </data>
+    <data name="Hello" xml:space="preserve">
+        <value>Hello</value>
+    </data>
+    <data name="Logout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+    <data name="Register" xml:space="preserve">
+        <value>Register</value>
+    </data>
+    <data name="Login" xml:space="preserve">
+        <value>Login</value>
+    </data>
+    <data name="Categories" xml:space="preserve">
+        <value>Categories</value>
+    </data>
+    <data name="Sections" xml:space="preserve">
+        <value>Sections</value>
+    </data>
+    <data name="Assignments" xml:space="preserve">
+        <value>Assignments</value>
+    </data>
+    <data name="Chapters" xml:space="preserve">
+        <value>Chapters</value>
+    </data>
+    <data name="Transcriptions" xml:space="preserve">
+        <value>Transcriptions</value>
+    </data>
+    <data name="Journals" xml:space="preserve">
+        <value>Journals</value>
+    </data>
+    <data name="Notifications" xml:space="preserve">
+        <value>Notifications</value>
+    </data>
+    <data name="Themes" xml:space="preserve">
+        <value>Themes</value>
+    </data>
+</root>

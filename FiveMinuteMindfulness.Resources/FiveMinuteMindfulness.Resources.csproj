@@ -1,0 +1,123 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Web\Common.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Common.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Web\Views\Shared\_Layout.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Application\Journal.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Journal.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Application\Notification.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Notification.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Application\Theme.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Theme.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Content\Category.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Category.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Content\Chapter.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Chapter.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Content\Section.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Section.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Content\Transcription.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Transcription.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Models\Content\Assignment.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Assignment.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Enums\ChapterType.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>ChapterType.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Enums\NotificationType.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>NotificationType.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Web\Common.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Common.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Web\Views\Shared\_Layout.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Application\Journal.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Journal.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Application\Notification.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Notification.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Application\Theme.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Theme.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Content\Category.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Category.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Content\Chapter.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Chapter.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Content\Section.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Section.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Content\Transcription.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Transcription.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Content\Assignment.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Assignment.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Enums\ChapterType.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ChapterType.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Enums\NotificationType.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>NotificationType.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>
