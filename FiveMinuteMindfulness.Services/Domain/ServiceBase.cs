@@ -2,6 +2,7 @@ using AutoMapper;
 using FiveMinuteMindfulness.Core.Constant;
 using FiveMinuteMindfulness.Core.Domain.Interfaces;
 using FiveMinuteMindfulness.Core.Dto;
+using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Data.Repositories.Interfaces;
 using FiveMinuteMindfulness.Services.Domain.Interfaces;
 
@@ -80,4 +81,19 @@ public abstract class ServiceBase<TEntity, TEntityDto> : IServiceBase<TEntityDto
     }
 
     protected abstract void UpdateEntityValues(TEntity entity, TEntityDto entityDto);
+
+    protected LanguageString UpdateLanguageString(LanguageString entityLanguageString, LanguageString dtoLanguageString)
+    {
+        var dtoKey = dtoLanguageString.First().Key;
+        if (entityLanguageString.ContainsKey(dtoKey))
+        {
+            entityLanguageString[dtoKey] = dtoLanguageString.First().Value;
+        }
+        else
+        {
+            entityLanguageString.Add(dtoLanguageString.First().Key, dtoLanguageString.First().Value);
+        }
+
+        return entityLanguageString;
+    }
 }

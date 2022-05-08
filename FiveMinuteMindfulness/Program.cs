@@ -1,4 +1,6 @@
 using System.Globalization;
+using FiveMinuteMindfulness;
+using FiveMinuteMindfulness.Core.Helpers;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Data;
 using FiveMinuteMindfulness.Services;
@@ -12,8 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add DbContext and set Migration assembly to .Data project
 builder.Services.AddDbContext<FiveMinutesContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("FiveMinutes"),
+    options.UseNpgsql(builder.Configuration.GetConnectionString("FiveMinutes"),
         x => x.MigrationsAssembly("FiveMinuteMindfulness.Data")));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentity<User, Role>(options => { options.SignIn.RequireConfirmedAccount = true; })
@@ -70,7 +73,13 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     };
 });
 
+builder.Services.AddControllersWithViews(
+    options => { options.ModelBinderProviders.Insert(0, new CustomLanguageStringBinderProvider()); }
+);
+
 var app = builder.Build();
+
+DataHelper.SetupAppData(app, app.Environment, app.Configuration);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

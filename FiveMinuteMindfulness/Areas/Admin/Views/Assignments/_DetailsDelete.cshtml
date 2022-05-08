@@ -8,13 +8,13 @@
             @Html.DisplayNameFor(model => model.Title)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
+            @Model.Title
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
+            @Model.Description
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Author)
@@ -28,7 +28,7 @@
         @if (Model.Category != null)
         {
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Category!.Title)
+                @Model.Category!.Title)
             </dd>
         }
         else
@@ -41,7 +41,7 @@
             @Html.DisplayNameFor(model => model.Section)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Section.Title)
+            @Model.Section.Title
         </dd>
     </dl>
 </div>

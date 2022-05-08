@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using FiveMinuteMindfulness.Core.Models;
 
 namespace FiveMinuteMindfulness.Core.Dto.Content;
 
@@ -9,7 +10,7 @@ public class CategoryDto : BaseDto
     [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Category), Name = nameof(Title))]
     [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Category),
         ErrorMessageResourceName = "TitleRequired")]
-    public string Title { get; set; }
+    public LanguageString Title { get; set; }
 
     public List<AssignmentDto?> Assignments { get; set; }
 }

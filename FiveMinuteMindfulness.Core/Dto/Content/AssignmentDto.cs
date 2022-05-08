@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using FiveMinuteMindfulness.Core.Models;
 
 namespace FiveMinuteMindfulness.Core.Dto.Content;
 
@@ -8,13 +9,13 @@ public class AssignmentDto : BaseDto
     [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Assignment), Name = nameof(Title))]
     [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Assignment),
         ErrorMessageResourceName = "TitleRequired")]
-    public string Title { get; set; }
+    public LanguageString Title { get; set; }
 
     [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Assignment),
         Name = nameof(Description))]
     [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Assignment),
         ErrorMessageResourceName = "DescriptionRequired")]
-    public string Description { get; set; }
+    public LanguageString Description { get; set; }
 
     [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Assignment), Name = nameof(Author))]
     [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Assignment),

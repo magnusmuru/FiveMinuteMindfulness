@@ -15,7 +15,7 @@ public class SectionService : ServiceBase<Section, SectionDto>, ISectionService
 
     protected override void UpdateEntityValues(Section entity, SectionDto entityDto)
     {
-        entity.Description = entityDto.Description;
-        entity.Title = entityDto.Title;
+        entity.Description = UpdateLanguageString(entity.Description, entityDto.Description);
+        entity.Title = UpdateLanguageString(entity.Title, entityDto.Title);
     }
 }

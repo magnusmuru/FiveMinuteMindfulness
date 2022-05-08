@@ -29,10 +29,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Content)
+                    @item.Content
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Chapter.Title)
+                    @item.Chapter.Title
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |

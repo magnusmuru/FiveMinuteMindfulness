@@ -22,9 +22,9 @@ public class ChapterService : ServiceBase<Chapter, ChapterDto>, IChapterService
     {
         entity.AssignmentId = entityDto.AssignmentId;
         entity.Author = entityDto.Author;
-        entity.Description = entityDto.Description;
+        entity.Description = UpdateLanguageString(entity.Description, entityDto.Description);
         entity.ChapterType = entityDto.ChapterType;
-        entity.Title = entityDto.Title;
+        entity.Title = UpdateLanguageString(entity.Title, entityDto.Title);
     }
 
     public async Task<List<ChapterDto>> FindChaptersWithAssignments()

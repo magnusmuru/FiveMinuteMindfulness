@@ -2,13 +2,20 @@ version: '3.8'
 services:
   fiveminutes:
     container_name: fiveminutes
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: postgres:latest
+    restart: unless-stopped
     ports:
-      - '1433:1433'
+      - '5432:5432'
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Password!322
-
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    volumes:
+      - fiveminutes-volume:/var/lib/postgresql/data
+  
   seq:
     image: datalust/seq:latest
     ports:
@@ -16,3 +23,6 @@ services:
       - 5341:5341
     environment:
       - ACCEPT_EULA=Y
+
+volumes:
+  fiveminutes-volume:

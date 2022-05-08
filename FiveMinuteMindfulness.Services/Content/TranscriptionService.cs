@@ -20,7 +20,7 @@ public class TranscriptionService : ServiceBase<Transcription, TranscriptionDto>
 
     protected override void UpdateEntityValues(Transcription entity, TranscriptionDto entityDto)
     {
-        entity.Content = entityDto.Content;
+        entity.Content = UpdateLanguageString(entity.Content, entityDto.Content);
         entity.ChapterId = entityDto.ChapterId;
     }
 

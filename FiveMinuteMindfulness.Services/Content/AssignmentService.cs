@@ -22,8 +22,8 @@ public class AssignmentService : ServiceBase<Assignment, AssignmentDto>, IAssign
     {
         entity.Author = entityDto.Author;
         entity.CategoryId = entityDto.CategoryId;
-        entity.Title = entityDto.Title;
-        entity.Description = entityDto.Description;
+        entity.Title = UpdateLanguageString(entity.Title, entityDto.Title);
+        entity.Description = UpdateLanguageString(entity.Description, entityDto.Description);
     }
 
     public async Task<List<AssignmentDto>> FindAssignmentsWithCategoriesAndSections()

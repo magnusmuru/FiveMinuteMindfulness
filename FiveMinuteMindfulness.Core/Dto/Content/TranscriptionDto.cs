@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using FiveMinuteMindfulness.Core.Models;
 
 namespace FiveMinuteMindfulness.Core.Dto.Content;
 
@@ -8,7 +9,7 @@ public class TranscriptionDto : BaseDto
         Name = nameof(Content))]
     [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Transcription),
         ErrorMessageResourceName = "ContentRequired")]
-    public string Content { get; set; }
+    public LanguageString Content { get; set; }
 
     [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Transcription),
         Name = nameof(Chapter))]

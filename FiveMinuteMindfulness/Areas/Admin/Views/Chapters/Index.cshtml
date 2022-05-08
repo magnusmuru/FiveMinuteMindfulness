@@ -39,10 +39,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Title)
+                        @item.Title
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Description)
+                        @item.Description
                     </td>
                     <td>
                         @Html.DisplayFor(model => item.Author)
@@ -51,7 +51,7 @@
                         @Html.DisplayFor(model => item.ChapterType)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => item.Assignment.Title)
+                        @item.Assignment.Title
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |

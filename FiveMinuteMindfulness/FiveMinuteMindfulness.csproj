@@ -8,20 +8,21 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.2" />
-      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
-      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.2" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
+      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.4" />
       <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
       <PackageReference Include="Serilog.Sinks.Seq" Version="5.1.1" />
     </ItemGroup>
@@ -39,6 +40,9 @@
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Details.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Edit.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Index.cshtml" />
+      <Folder Include="Views\Content" />
+      <Folder Include="Views\Courses" />
+      <Folder Include="Views\Journals" />
     </ItemGroup>
 
 </Project>

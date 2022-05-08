@@ -15,6 +15,6 @@ public class CategoryService : ServiceBase<Category, CategoryDto>, ICategoryServ
 
     protected override void UpdateEntityValues(Category entity, CategoryDto entityDto)
     {
-        entity.Title = entityDto.Title;
+        entity.Title = UpdateLanguageString(entity.Title, entityDto.Title);
     }
 }
