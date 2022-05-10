@@ -24,11 +24,6 @@ public class ChapterDto : BaseDto
 
     public bool IsCompleted { get; set; }
 
-    [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Chapter), Name = nameof(ChapterType))]
-    [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Chapter),
-        ErrorMessageResourceName = "ChapterTypeRequired")]
-    public ChapterType ChapterType { get; set; }
-
     public TranscriptionDto? Transcription { get; set; }
     public Guid? TranscriptionId { get; set; }
 

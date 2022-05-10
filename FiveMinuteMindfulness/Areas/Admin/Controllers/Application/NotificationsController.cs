@@ -2,12 +2,14 @@ using FiveMinuteMindfulness.Core.Dto.Application;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Application.Interfaces;
 using FiveMinuteMindfulness.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiveMinuteMindfulness.Areas.Admin.Controllers.Application;
 
 [Area("Admin")]
+[Authorize(Roles = "admin")]
 public class NotificationsController : Controller
 {
     private ILogger<NotificationsController> _logger;

@@ -17,17 +17,17 @@
     <data name="ColorPalette" xml:space="preserve">
         <value>Värvipalett</value>
     </data>
-    <data name="User" xml:space="preserve">
-        <value>Kasutaja</value>
+    <data name="Assignment" xml:space="preserve">
+        <value>Ülesanne</value>
     </data>
-    <data name="UserRequired" xml:space="preserve">
-        <value>Kasutaja väli on kohustuslik.</value>
+    <data name="AssignmentRequired" xml:space="preserve">
+        <value>Ülesande väli on kohustuslik.</value>
     </data>
     <data name="UrlRequired" xml:space="preserve">
         <value>Tausta URL väli on kohustuslik.</value>
     </data>
-    <data name="SelectUser" xml:space="preserve">
-        <value>Vali Kasutaja</value>
+    <data name="SelectAssignment" xml:space="preserve">
+        <value>Vali Ülesanne</value>
     </data>
     <data name="ColorPaletteRequired" xml:space="preserve">
         <value>Värvipaletti väli on kohustuslik.</value>

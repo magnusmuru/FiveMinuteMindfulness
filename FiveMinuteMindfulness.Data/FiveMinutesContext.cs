@@ -17,7 +17,7 @@ public class FiveMinutesContext : IdentityDbContext<User, Role, Guid>
     {
         base.OnModelCreating(builder);
         builder.ApplyConfiguration(new ChapterConfiguration());
-        builder.ApplyConfiguration(new UserConfiguration());
+        builder.ApplyConfiguration(new ThemeConfiguration());
     }
 
     public DbSet<User> Users { get; set; }

@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IEnumerable<FiveMinuteMindfulness.Core.Dto.Content.AssignmentDto>
 
 @{
@@ -33,42 +34,39 @@
         </tr>
         </thead>
         <tbody>
-        @if (Model != null)
+        @foreach (var item in Model)
         {
-            foreach (var item in Model)
-            {
-                <tr>
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Author)
+                </td>
+                @if (item.Category != null)
+                {
                     <td>
-                        @item.Title
+                        @item.Category.Title
                     </td>
+                }
+                else
+                {
                     <td>
-                        @item.Description
+                        @FiveMinuteMindfulness.Resources.Models.Content.Assignment.NoCategory
                     </td>
-                    <td>
-                        @Html.DisplayFor(model => item.Author)
-                    </td>
-                    @if (item.Category != null)
-                    {
-                        <td>
-                            @item.Category.Title
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            @FiveMinuteMindfulness.Resources.Models.Content.Assignment.NoCategory
-                        </td>
-                    }
-                    <td>
-                        @item.Section.Title
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Delete</a>
-                    </td>
-                </tr>
-            }
+                }
+                <td>
+                    @item.Section.Title
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Delete</a>
+                </td>
+            </tr>
         }
         </tbody>
     </table>

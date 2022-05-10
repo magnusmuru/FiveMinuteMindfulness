@@ -1,0 +1,45 @@
+﻿@model FiveMinuteMindfulness.Core.Dto.Content.AssignmentDto
+
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "_Layout";
+}
+
+<div class="d-flex w-100 h-100">
+    <div class="w-50">
+        @if (Model.Theme != null)
+        {
+            <img class="page-image" src="@Model.Theme.Url"
+                 alt="Pastel colored disks floating."/>
+        }
+        else
+        {
+            <img class="page-image" src="https://source.unsplash.com/FtqY6goIY14"
+                 alt="Pastel colored disks floating."/>
+        }
+    </div>
+    <div class="w-50">
+        <div class="padded-container">
+            <div class="mb-5">
+                <h2>@Model.Title</h2>
+                @if (Model.Chapters != null)
+                {
+                    foreach (var chapterDto in Model.Chapters)
+
+                    {
+                        <p>@chapterDto.Description</p>
+                    }
+                }
+                else
+                {
+                    <p>Please add Chapters</p>
+                }
+            </div>
+            <div>
+                <div>
+                    <a class="btn btn-purple btn-purple-text" asp-area="Courses" asp-controller="Courses" asp-action="Index">@FiveMinuteMindfulness.Resources.Web.Common.Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

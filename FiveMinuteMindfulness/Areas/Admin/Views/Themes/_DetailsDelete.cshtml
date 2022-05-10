@@ -16,9 +16,9 @@
         @Html.DisplayFor(model => model.ColorPalette)
     </dd>
     <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.User)
+        @Html.DisplayNameFor(model => model.Assignment)
     </dt>
     <dd class="col-sm-10">
-        @Html.DisplayFor(model => model.User.Username)
+        @Model.Assignment.Title
     </dd>
 </dl>

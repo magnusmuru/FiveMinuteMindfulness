@@ -124,6 +124,15 @@ namespace FiveMinuteMindfulness.Resources.Models.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Theme.
+        /// </summary>
+        public static string NoTheme {
+            get {
+                return ResourceManager.GetString("NoTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Section.
         /// </summary>
         public static string Section {
@@ -147,6 +156,15 @@ namespace FiveMinuteMindfulness.Resources.Models.Content {
         public static string SelectSection {
             get {
                 return ResourceManager.GetString("SelectSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        public static string Theme {
+            get {
+                return ResourceManager.GetString("Theme", resourceCulture);
             }
         }
         

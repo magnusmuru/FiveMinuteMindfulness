@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using FiveMinuteMindfulness.Core.Dto.Content;
+using FiveMinuteMindfulness.Core.Models.Content;
 
 namespace FiveMinuteMindfulness.Core.Dto.Application;
 
@@ -16,11 +18,13 @@ public class ThemeDto : BaseDto
         ErrorMessageResourceName = "ColorPaletteRequired")]
     public string ColorPalette { get; set; }
 
-    [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Application.Theme), Name = nameof(User))]
+    [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Application.Theme),
+        Name = nameof(Assignment))]
     [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Application.Theme),
-        ErrorMessageResourceName = "UserRequired")]
-    public UserDto User { get; set; }
+        ErrorMessageResourceName = "AssignmentRequired")]
+    public AssignmentDto Assignment { get; set; }
 
-    public Guid UserId { get; set; }
-    public List<UserDto> UserDtos { get; set; }
+    public Guid AssignmentId { get; set; }
+
+    public List<AssignmentDto> AssignmentDtos { get; set; }
 }

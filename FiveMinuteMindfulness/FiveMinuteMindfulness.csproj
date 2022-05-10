@@ -22,6 +22,7 @@
       </PackageReference>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.4" />
       <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
       <PackageReference Include="Serilog.Sinks.Seq" Version="5.1.1" />
@@ -34,15 +35,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Areas" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Create.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Delete.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Details.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Edit.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Index.cshtml" />
-      <Folder Include="Views\Content" />
-      <Folder Include="Views\Courses" />
-      <Folder Include="Views\Journals" />
+      <Folder Include="Areas\Journals" />
     </ItemGroup>
 
 </Project>

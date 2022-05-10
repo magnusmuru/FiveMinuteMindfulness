@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IEnumerable<FiveMinuteMindfulness.Core.Dto.Content.SectionDto>
 
 @{
@@ -19,6 +20,9 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ChapterType)
+            </th>
+            <th>
                 @FiveMinuteMindfulness.Resources.Web.Common.Actions
             </th>
         </tr>
@@ -32,6 +36,9 @@
                 </td>
                 <td>
                     @item.Description
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.ChapterType)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |

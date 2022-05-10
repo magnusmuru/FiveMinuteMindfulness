@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IEnumerable<FiveMinuteMindfulness.Core.Dto.Content.ChapterDto>
 
 @{
@@ -22,9 +23,6 @@
                 @Html.DisplayNameFor(model => model.Author)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ChapterType)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Assignment)
             </th>
             <th>
@@ -46,9 +44,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(model => item.Author)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => item.ChapterType)
                     </td>
                     <td>
                         @item.Assignment.Title

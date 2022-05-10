@@ -61,6 +61,24 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment.
+        /// </summary>
+        public static string Assignment {
+            get {
+                return ResourceManager.GetString("Assignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Assignment field is required..
+        /// </summary>
+        public static string AssignmentRequired {
+            get {
+                return ResourceManager.GetString("AssignmentRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color Palette.
         /// </summary>
         public static string ColorPalette {
@@ -79,11 +97,11 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select User.
+        ///   Looks up a localized string similar to Select Assignment.
         /// </summary>
-        public static string SelectUser {
+        public static string SelectAssignment {
             get {
-                return ResourceManager.GetString("SelectUser", resourceCulture);
+                return ResourceManager.GetString("SelectAssignment", resourceCulture);
             }
         }
         
@@ -102,24 +120,6 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         public static string UrlRequired {
             get {
                 return ResourceManager.GetString("UrlRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User.
-        /// </summary>
-        public static string User {
-            get {
-                return ResourceManager.GetString("User", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The User field is required..
-        /// </summary>
-        public static string UserRequired {
-            get {
-                return ResourceManager.GetString("UserRequired", resourceCulture);
             }
         }
     }

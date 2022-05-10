@@ -1,12 +1,14 @@
 using FiveMinuteMindfulness.Core.Dto.Content;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Content.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiveMinuteMindfulness.Areas.Admin.Controllers.Content;
 
 [Area("Admin")]
+[Authorize(Roles = "admin")]
 public class SectionsController : Controller
 {
     private ILogger<SectionsController> _logger;
@@ -35,7 +37,7 @@ public class SectionsController : Controller
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        [Bind("Title, Description")] SectionDto model)
+        [Bind("Title, Description, ChapterType")] SectionDto model)
     {
         ModelState.Remove("Assignments");
         if (ModelState.IsValid)

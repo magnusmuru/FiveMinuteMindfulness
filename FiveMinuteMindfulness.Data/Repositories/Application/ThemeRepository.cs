@@ -13,8 +13,8 @@ public class ThemeRepository : RepositoryBase<Theme>, IThemeRepository
         _context = context;
     }
 
-    public async Task<List<Theme>> FindThemesWithUsers()
+    public async Task<List<Theme>> FindThemesWithAssignments()
     {
-        return await DbSet.Include(x => x.User).ToListAsync();
+        return await DbSet.Include(x => x.Assignment).ToListAsync();
     }
 }

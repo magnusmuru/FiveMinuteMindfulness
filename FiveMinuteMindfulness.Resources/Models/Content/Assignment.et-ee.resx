@@ -21,7 +21,7 @@
         <value>Kirjeldus</value>
     </data>
     <data name="Section" xml:space="preserve">
-        <value>Osa</value>
+        <value>Sektsioon</value>
     </data>
     <data name="Title" xml:space="preserve">
         <value>Pealkiri</value>
@@ -46,5 +46,11 @@
     </data>
     <data name="SelectSection" xml:space="preserve">
         <value>Vali Sektsioon</value>
+    </data>
+    <data name="Theme" xml:space="preserve">
+        <value>Kujundus</value>
+    </data>
+    <data name="NoTheme" xml:space="preserve">
+        <value>Kujunduseta</value>
     </data>
 </root>

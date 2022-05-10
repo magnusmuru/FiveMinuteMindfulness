@@ -19,9 +19,9 @@ public class ThemeService : ServiceBase<Theme, ThemeDto>, IThemeService
     }
 
 
-    public async Task<List<ThemeDto>> FindThemesWithUsers()
+    public async Task<List<ThemeDto>> FindThemesWithAssignments()
     {
-        var themes = await _repository.FindThemesWithUsers();
+        var themes = await _repository.FindThemesWithAssignments();
         return _mapper.Map<List<ThemeDto>>(themes);
     }
 
@@ -30,6 +30,5 @@ public class ThemeService : ServiceBase<Theme, ThemeDto>, IThemeService
     {
         entity.Url = entityDto.Url;
         entity.ColorPalette = entityDto.ColorPalette;
-        entity.UserId = entityDto.UserId;
     }
 }

@@ -5,4 +5,5 @@ namespace FiveMinuteMindfulness.Data.Repositories.Content.Interfaces;
 
 public interface ISectionRepository : IRepositoryBase<Section>
 {
+    Task<List<Section>> FindSectionsWithAssignments();
 }

@@ -5,5 +5,5 @@ namespace FiveMinuteMindfulness.Services.Application.Interfaces;
 
 public interface IThemeService : IServiceBase<ThemeDto>
 {
-    Task<List<ThemeDto>> FindThemesWithUsers();
+    Task<List<ThemeDto>> FindThemesWithAssignments();
 }

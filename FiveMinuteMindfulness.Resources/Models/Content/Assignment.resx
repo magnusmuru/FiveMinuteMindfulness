@@ -54,4 +54,10 @@
     <data name="SelectSection" xml:space="preserve">
         <value>Select Section</value>
     </data>
+    <data name="Theme" xml:space="preserve">
+        <value>Theme</value>
+    </data>
+    <data name="NoTheme" xml:space="preserve">
+        <value>No Theme</value>
+    </data>
 </root>

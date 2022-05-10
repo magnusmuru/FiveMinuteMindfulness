@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using FiveMinuteMindfulness.Core.Domain;
+using FiveMinuteMindfulness.Core.Enums;
+using FiveMinuteMindfulness.Core.Models.Application;
 
 namespace FiveMinuteMindfulness.Core.Models.Content;
 
@@ -16,6 +18,8 @@ public class Assignment : AuditEntity
     public List<User?> Users { get; set; }
     public Section Section { get; set; }
     public Guid SectionId { get; set; }
+    public Theme? Theme { get; set; }
+    public Guid? ThemeId { get; set; }
     public Category? Category { get; set; }
     public Guid? CategoryId { get; set; }
 }

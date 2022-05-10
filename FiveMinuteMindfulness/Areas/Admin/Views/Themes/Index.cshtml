@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IEnumerable<FiveMinuteMindfulness.Core.Dto.Application.ThemeDto>
 
 @{
@@ -19,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.ColorPalette)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User)
+                @Html.DisplayNameFor(model => model.Assignment)
             </th>
             <th>
                 @FiveMinuteMindfulness.Resources.Web.Common.Actions
@@ -39,7 +40,7 @@
                         @Html.DisplayFor(modelItem => item.ColorPalette)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.User.Username)
+                        @item.Assignment.Title
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |

@@ -23,7 +23,6 @@ public class ChapterService : ServiceBase<Chapter, ChapterDto>, IChapterService
         entity.AssignmentId = entityDto.AssignmentId;
         entity.Author = entityDto.Author;
         entity.Description = UpdateLanguageString(entity.Description, entityDto.Description);
-        entity.ChapterType = entityDto.ChapterType;
         entity.Title = UpdateLanguageString(entity.Title, entityDto.Title);
     }
 

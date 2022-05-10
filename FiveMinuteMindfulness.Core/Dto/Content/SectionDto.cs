@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using FiveMinuteMindfulness.Core.Enums;
 using FiveMinuteMindfulness.Core.Models;
 
 namespace FiveMinuteMindfulness.Core.Dto.Content;
@@ -17,4 +18,9 @@ public class SectionDto : BaseDto
     public LanguageString Description { get; set; }
 
     public List<AssignmentDto?> Assignments { get; set; }
+    
+    [Display(ResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Chapter), Name = nameof(ChapterType))]
+    [Required(ErrorMessageResourceType = typeof(FiveMinuteMindfulness.Resources.Models.Content.Chapter),
+        ErrorMessageResourceName = "ChapterTypeRequired")]
+    public ChapterType ChapterType { get; set; }
 }

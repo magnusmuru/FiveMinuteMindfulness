@@ -24,8 +24,8 @@
     <data name="ColorPalette" xml:space="preserve">
         <value>Color Palette</value>
     </data>
-    <data name="User" xml:space="preserve">
-        <value>User</value>
+    <data name="Assignment" xml:space="preserve">
+        <value>Assignment</value>
     </data>
     <data name="ColorPaletteRequired" xml:space="preserve">
         <value>The Color Palette field is required.</value>
@@ -33,10 +33,10 @@
     <data name="UrlRequired" xml:space="preserve">
         <value>The Background URL field is required.</value>
     </data>
-    <data name="UserRequired" xml:space="preserve">
-        <value>The User field is required.</value>
+    <data name="AssignmentRequired" xml:space="preserve">
+        <value>The Assignment field is required.</value>
     </data>
-    <data name="SelectUser" xml:space="preserve">
-        <value>Select User</value>
+    <data name="SelectAssignment" xml:space="preserve">
+        <value>Select Assignment</value>
     </data>
 </root>

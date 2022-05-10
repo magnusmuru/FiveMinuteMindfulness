@@ -1,12 +1,14 @@
 using FiveMinuteMindfulness.Core.Dto.Content;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Content.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiveMinuteMindfulness.Areas.Admin.Controllers.Content;
 
 [Area("Admin")]
+[Authorize(Roles = "admin")]
 public class AssignmentsController : Controller
 {
     private ILogger<AssignmentsController> _logger;
@@ -191,5 +193,8 @@ public class AssignmentsController : Controller
         ModelState.Remove("Category");
         ModelState.Remove("CategoryDtos");
         ModelState.Remove("Chapters");
+        ModelState.Remove("Theme");
+        ModelState.Remove("Users");
+        ModelState.Remove("CategoryId");
     }
 }

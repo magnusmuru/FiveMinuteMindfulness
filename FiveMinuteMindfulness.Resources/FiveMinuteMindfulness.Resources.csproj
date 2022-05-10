@@ -55,6 +55,10 @@
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>NotificationType.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Web\Areas\Identity\Common.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Common.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -117,6 +121,11 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>NotificationType.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Web\Areas\Identity\Common.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Common.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

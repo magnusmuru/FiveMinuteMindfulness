@@ -79,6 +79,15 @@ namespace FiveMinuteMindfulness.Resources.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back To List.
         /// </summary>
         public static string BackToList {
@@ -102,6 +111,24 @@ namespace FiveMinuteMindfulness.Resources.Web {
         public static string Chapter {
             get {
                 return ResourceManager.GetString("Chapter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Courses.
+        /// </summary>
+        public static string Courses {
+            get {
+                return ResourceManager.GetString("Courses", resourceCulture);
             }
         }
         
@@ -169,11 +196,29 @@ namespace FiveMinuteMindfulness.Resources.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home Page.
+        /// </summary>
+        public static string HomePage {
+            get {
+                return ResourceManager.GetString("HomePage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Journal.
         /// </summary>
         public static string Journal {
             get {
                 return ResourceManager.GetString("Journal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Journals.
+        /// </summary>
+        public static string Journals {
+            get {
+                return ResourceManager.GetString("Journals", resourceCulture);
             }
         }
         

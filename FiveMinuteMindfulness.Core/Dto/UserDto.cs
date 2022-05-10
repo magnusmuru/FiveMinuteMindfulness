@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using FiveMinuteMindfulness.Core.Dto.Application;
 using FiveMinuteMindfulness.Core.Dto.Content;
 
@@ -10,6 +11,6 @@ public class UserDto : BaseDto
     public List<ChapterDto?> Chapters { get; set; }
     public List<JournalDto?> Journals { get; set; }
     public List<NotificationDto?> Notifications { get; set; }
-    public ThemeDto? Theme { get; set; }
-    public Guid? ThemeId { get; set; }
+    [MinLength(1)] [MaxLength(128)] public string FirstName { get; set; } = default!;
+    [MinLength(1)] [MaxLength(128)] public string LastName { get; set; } = default!;
 }

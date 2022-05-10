@@ -1,41 +1,44 @@
 using FiveMinuteMindfulness.Core.Dto.Application;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Application.Interfaces;
+using FiveMinuteMindfulness.Services.Content.Interfaces;
 using FiveMinuteMindfulness.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiveMinuteMindfulness.Areas.Admin.Controllers.Application;
 
 [Area("Admin")]
+[Authorize(Roles = "admin")]
 public class ThemesController : Controller
 {
     private ILogger<ThemesController> _logger;
     private readonly IThemeService _themeService;
     private readonly UserManager<User> _userManager;
-    private readonly IUserService _userService;
+    private readonly IAssignmentService _assignmentService;
 
     public ThemesController(ILogger<ThemesController> logger,
         UserManager<User> userManager,
         IThemeService themeService,
-        IUserService userService)
+        IAssignmentService assignmentService)
     {
         _logger = logger;
         _userManager = userManager;
         _themeService = themeService;
-        _userService = userService;
+        _assignmentService = assignmentService;
     }
 
     public async Task<IActionResult> Index()
     {
-        return View(await _themeService.FindThemesWithUsers());
+        return View(await _themeService.FindThemesWithAssignments());
     }
 
     public async Task<ViewResult> Create()
     {
         var viewModel = new ThemeDto
         {
-            UserDtos = await _userService.GetAllAsync()
+            AssignmentDtos = await _assignmentService.GetAllAsync()
         };
 
         return View(viewModel);
@@ -74,7 +77,7 @@ public class ThemesController : Controller
             return NotFound();
         }
 
-        theme.UserDtos = await _userService.GetAllAsync();
+        theme.AssignmentDtos = await _assignmentService.GetAllAsync();
 
         return View(theme);
     }
@@ -116,10 +119,10 @@ public class ThemesController : Controller
             return NotFound();
         }
 
-        var user = await _userService.GetByIdAsync(theme.UserId);
+        var user = await _assignmentService.GetByIdAsync(theme.AssignmentId);
         if (user != null)
         {
-            theme.User = user;
+            theme.Assignment = user;
         }
 
         return View(theme);
@@ -138,10 +141,10 @@ public class ThemesController : Controller
             return NotFound();
         }
 
-        var user = await _userService.GetByIdAsync(theme.UserId);
+        var user = await _assignmentService.GetByIdAsync(theme.AssignmentId);
         if (user != null)
         {
-            theme.User = user;
+            theme.Assignment = user;
         }
 
         return View(theme);
@@ -162,7 +165,7 @@ public class ThemesController : Controller
 
     private void ModelStateRemoval()
     {
-        ModelState.Remove("User");
-        ModelState.Remove("UserDtos");
+        ModelState.Remove("Assignment");
+        ModelState.Remove("AssignmentDtos");
     }
 }

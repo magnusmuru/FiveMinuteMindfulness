@@ -5,5 +5,5 @@ namespace FiveMinuteMindfulness.Data.Repositories.Application.Interfaces;
 
 public interface IThemeRepository : IRepositoryBase<Theme>
 {
-    Task<List<Theme>> FindThemesWithUsers();
+    Task<List<Theme>> FindThemesWithAssignments();
 }

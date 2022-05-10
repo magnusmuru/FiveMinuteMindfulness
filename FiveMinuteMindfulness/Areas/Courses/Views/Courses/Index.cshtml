@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FiveMinuteMindfulness.Core.Dto.Content.SectionDto>
+
+@{
+    ViewBag.Title = FiveMinuteMindfulness.Resources.Web.Common.Courses;
+    Layout = "_Layout";
+}
+
+@await Html.PartialAsync("_Sidebar", 0);
+<partial name="_BackgroundVectors" model="Model"/>
+
+<div class="d-flex w-100 h-100">
+    <div class="w-100">
+        <div class="course-content-container">
+            <h3>@FiveMinuteMindfulness.Resources.Web.Common.Courses;</h3>
+            <div>
+                @foreach (var item in Model)
+                {
+                    <h4>@item.Title</h4>
+                    <div class="course-items">
+                        @foreach (var assignment in item.Assignments)
+                        {
+                            if (assignment?.Theme != null)
+                            {
+                                <a class="course-entry cursor-pointer"
+                                   role="button"
+                                   asp-action="Details" asp-route-id="@assignment?.Id">
+                                    <img class="course-image" src="@assignment?.Theme?.Url"
+                                         alt="Pastel colored disks floating."/>
+                                    <div class="course-cover" style="background: @assignment?.Theme?.ColorPalette"></div>
+                                    <div class="course-title">@assignment?.Title</div>
+                                    <div class="course-subtitle">@assignment?.Description</div>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="course-entry cursor-pointer"
+                                   role="button"
+                                   asp-action="Details" asp-route-id="@assignment?.Id">
+                                    <img class="course-image" src="https://source.unsplash.com/FtqY6goIY14"
+                                         alt="Pastel colored disks floating."/>
+                                    <div class="course-cover purple-background"></div>
+                                    <div class="course-title">@assignment?.Title</div>
+                                    <div class="course-subtitle">@assignment?.Description</div>
+                                </a>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

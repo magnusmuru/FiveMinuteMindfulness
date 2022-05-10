@@ -45,6 +45,31 @@ builder.Host.UseSerilog((context, loggerConfiguration) => loggerConfiguration
 builder.Services.AddDataServices();
 builder.Services.AddApplicationServices();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    // Cookie settings        
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromDays(30);
+    // If the LoginPath isn't set, ASP.NET Core defaults         
+    // the path to /Account/Login.        
+    options.LoginPath = "/Account/Login";
+    // If the AccessDeniedPath isn't set, ASP.NET Core defaults         
+    // the path to /Account/AccessDenied.        
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.SlidingExpiration = true;
+});
+
+builder.Services.Configure<IdentityOptions>(options => {        
+    // Password settings        
+    options.Password.RequireDigit = false;        
+    options.Password.RequiredLength = 1;        
+    options.Password.RequireNonAlphanumeric = false;        
+    options.Password.RequireUppercase = false;        
+    options.Password.RequireLowercase = false;
+    // User settings        
+    options.User.RequireUniqueEmail = true;    
+});
+
 // I18N
 var supportedCultures = builder.Configuration
     .GetSection("SupportedCultures")

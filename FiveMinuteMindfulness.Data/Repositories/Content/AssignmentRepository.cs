@@ -15,6 +15,10 @@ public class AssignmentRepository : RepositoryBase<Assignment>, IAssignmentRepos
 
     public async Task<List<Assignment>> FindAssignmentsWithCategoriesAndSections()
     {
-        return await DbSet.Include(x => x.Category).Include(x => x.Section).ToListAsync();
+        return await DbSet.Include(x => x.Category)
+            .Include(x => x.Section)
+            .Include(x => x.Theme)
+            .Include(x => x.Chapters)
+            .ToListAsync();
     }
 }

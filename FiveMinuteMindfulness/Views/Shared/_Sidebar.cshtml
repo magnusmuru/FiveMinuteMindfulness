@@ -1,0 +1,48 @@
+﻿@model int
+
+<div class="sidebar">
+    @if (Model == 0)
+    {
+        <div class="sidebar-active">
+            <i class="fa-solid fa-house sidebar-icon"></i>
+            <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Courses</span>
+        </div>
+    }
+    else
+    {
+        <a class="sidebar-entry" asp-area="Courses" asp-controller="Courses" asp-action="Index">
+            <i class="fa-solid fa-house sidebar-icon"></i>
+            <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Courses</span>
+        </a>
+    }
+
+    @if (Model == 1)
+    {
+        <div class="sidebar-active">
+            <i class="fa-solid fa-bookmark sidebar-icon"></i>
+            <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Content</span>
+        </div>
+    }
+    else
+    {
+        <a class="sidebar-entry" asp-area="Content" asp-controller="Content" asp-action="Index">
+            <i class="fa-solid fa-bookmark sidebar-icon"></i>
+            <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Content</span>
+        </a>
+    }
+
+    @if (Model == 2)
+    {
+        <div class="sidebar-active">
+            <i class="fa-solid fa-book-open sidebar-icon"></i>
+            <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Journals</span>
+        </div>
+    }
+    else
+    {
+        <div class="sidebar-entry" role="button" onclick="window.location.href='journals-home.html'">
+            <i class="fa-solid fa-book-open sidebar-icon"></i>
+            <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Journals</span>
+        </div>
+    }
+</div>
