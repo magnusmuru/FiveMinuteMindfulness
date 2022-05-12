@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FiveMinuteMindfulness.Core.Dto.Application.JournalDto>
+
+@{
+    ViewBag.Title = FiveMinuteMindfulness.Resources.Web.Common.Journals;
+    Layout = "_Layout";
+}
+
+@await Html.PartialAsync("_Sidebar", 2);
+<partial name="_BackgroundVectors" model="Model"/>
+
+<div class="d-flex w-100 h-100">
+    <div class="w-100">
+        <div class="journal-content-container">
+            <h3>@FiveMinuteMindfulness.Resources.Web.Common.YourJournals</h3>
+            <div class="journal-items">
+                @foreach (var item in Model)
+                {
+                    <a class="journal-entry" asp-action="Edit" asp-route-id="@item.Id">
+                        <div class="journal-text">
+                            <div class="journal-title">
+                                @item.Title
+                            </div>
+                            <div class="journal-subtitle">
+                                @item.Subtitle
+                            </div>
+                            <div class="journal-date">
+                                —> @item.UpdatedAt.Date.ToShortDateString()
+                            </div>
+                        </div>
+                        <img class="journal-picture" src="https://source.unsplash.com/FtqY6goIY14"
+                             alt="Pastel colored disks floating."/>
+                    </a>
+                }
+            </div>
+            <div>
+                <a class="btn btn-purple btn-bottom-align btn-purple-text" asp-action="Create">
+                    @FiveMinuteMindfulness.Resources.Web.Common.CreateJournal
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

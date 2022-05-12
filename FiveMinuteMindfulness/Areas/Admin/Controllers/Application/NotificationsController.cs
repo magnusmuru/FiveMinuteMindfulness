@@ -52,6 +52,7 @@ public class NotificationsController : Controller
 
         if (ModelState.IsValid)
         {
+            model.NotificationTime = DateTime.SpecifyKind(model.NotificationTime, DateTimeKind.Utc);
             var id = _userManager.GetUserId(User);
             model.CreatedBy = Guid.Parse(id);
             model.UpdatedBy = Guid.Parse(id);
@@ -95,6 +96,7 @@ public class NotificationsController : Controller
 
         if (ModelState.IsValid)
         {
+            model.NotificationTime = DateTime.SpecifyKind(model.NotificationTime, DateTimeKind.Utc);
             var userId = _userManager.GetUserId(User);
             model.UpdatedBy = Guid.Parse(userId);
             await _notificationService.UpdateAsync(model);

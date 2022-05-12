@@ -182,4 +182,16 @@ FiveMinuteMindfulness does not knowingly collect any Personal Identifiable Infor
     <data name="Journals" xml:space="preserve">
         <value>Journals</value>
     </data>
+    <data name="YourJournals" xml:space="preserve">
+        <value>Your Journals</value>
+    </data>
+    <data name="CreateJournal" xml:space="preserve">
+        <value>Create New Journal</value>
+    </data>
+    <data name="EditJournal" xml:space="preserve">
+        <value>Edit Journal</value>
+    </data>
+    <data name="DeleteJournal" xml:space="preserve">
+        <value>Delete Journal?</value>
+    </data>
 </root>

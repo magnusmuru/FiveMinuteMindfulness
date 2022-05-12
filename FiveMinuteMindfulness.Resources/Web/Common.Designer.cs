@@ -142,6 +142,15 @@ namespace FiveMinuteMindfulness.Resources.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create New Journal.
+        /// </summary>
+        public static string CreateJournal {
+            get {
+                return ResourceManager.GetString("CreateJournal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create New.
         /// </summary>
         public static string CreateNew {
@@ -169,6 +178,15 @@ namespace FiveMinuteMindfulness.Resources.Web {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Journal?.
+        /// </summary>
+        public static string DeleteJournal {
+            get {
+                return ResourceManager.GetString("DeleteJournal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -183,6 +201,15 @@ namespace FiveMinuteMindfulness.Resources.Web {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Journal.
+        /// </summary>
+        public static string EditJournal {
+            get {
+                return ResourceManager.GetString("EditJournal", resourceCulture);
             }
         }
         
@@ -322,6 +349,15 @@ namespace FiveMinuteMindfulness.Resources.Web {
         public static string Transcription {
             get {
                 return ResourceManager.GetString("Transcription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Journals.
+        /// </summary>
+        public static string YourJournals {
+            get {
+                return ResourceManager.GetString("YourJournals", resourceCulture);
             }
         }
     }

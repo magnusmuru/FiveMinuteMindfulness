@@ -1,0 +1,35 @@
+﻿@model FiveMinuteMindfulness.Core.Dto.Application.JournalDto
+
+@{
+    ViewBag.Title = FiveMinuteMindfulness.Resources.Web.Common.DeleteJournal;
+    Layout = "_Layout";
+}
+
+@await Html.PartialAsync("_Sidebar", 9);
+<partial name="_BackgroundVectors" model="Model" xmlns="http://www.w3.org/1999/html"/>
+
+<div class="d-flex w-100 h-100">
+    <div class="w-100">
+        <div class="journal-content-container">
+            <h3>@FiveMinuteMindfulness.Resources.Web.Common.DeleteJournal?</h3>
+            <form asp-action="Delete" class="journal-items">
+
+                <label asp-for="Title" class="control-label"></label>
+                <input type="text" readonly class="form-control-plaintext" value="@Model.Title">
+
+                <label asp-for="Subtitle" class="control-label"></label>
+                <input type="text" readonly class="form-control-plaintext" value="@Model.Subtitle">
+
+                <label asp-for="Content" class="control-label"></label>
+                <input type="text" readonly class="form-control-plaintext" value="@Model.Content">
+
+                <input type="submit" value="@FiveMinuteMindfulness.Resources.Web.Common.DeleteJournal" class="btn btn-purple btn-bottom-align btn-purple-text" style="border-color: red;"/>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+
+</div>

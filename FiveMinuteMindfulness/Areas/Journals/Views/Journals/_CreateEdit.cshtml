@@ -1,0 +1,15 @@
+﻿@using FiveMinuteMindfulness.Core.Dto
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model FiveMinuteMindfulness.Core.Dto.Application.JournalDto
+
+<label asp-for="Title" class="control-label"></label>
+<input asp-for="Title" class="form-control form-control-lg m-2"/>
+<span asp-validation-for="Title" class="text-danger"></span>
+
+<label asp-for="Subtitle" class="control-label"></label>
+<input asp-for="Subtitle" class="form-control form-control-lg m-2"/>
+<span asp-validation-for="Subtitle" class="text-danger"></span>
+
+<label asp-for="Content" class="control-label"></label>
+<input asp-for="Content" class="form-control form-control-lg m-2"/>
+<span asp-validation-for="Content" class="text-danger"></span>

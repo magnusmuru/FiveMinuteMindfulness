@@ -42,4 +42,10 @@
     <data name="SelectNotificationType" xml:space="preserve">
         <value>Select Notification Type</value>
     </data>
+    <data name="NotificationTime" xml:space="preserve">
+        <value>Notification Time</value>
+    </data>
+    <data name="NotificationTimeRequired" xml:space="preserve">
+        <value>The Notification Time field is required.</value>
+    </data>
 </root>

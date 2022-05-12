@@ -79,6 +79,24 @@ namespace FiveMinuteMindfulness.Resources.Models.Application {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notification Time.
+        /// </summary>
+        public static string NotificationTime {
+            get {
+                return ResourceManager.GetString("NotificationTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Notification Time field is required..
+        /// </summary>
+        public static string NotificationTimeRequired {
+            get {
+                return ResourceManager.GetString("NotificationTimeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification Type.
         /// </summary>
         public static string NotificationType {

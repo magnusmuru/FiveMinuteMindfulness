@@ -40,7 +40,23 @@
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Details.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Edit.cshtml" />
       <AdditionalFiles Include="Areas\Admin\Views\Categories\Index.cshtml" />
-      <Folder Include="Areas\Journals" />
+      <AdditionalFiles Include="Areas\Journals\Views\Journals\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Journals\Views\_ViewImports.cshtml" />
+      <AdditionalFiles Include="Areas\Journals\Views\_ViewStart.cshtml" />
+      <Folder Include="Areas\Notifications" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Areas\Journals\Views\Journals\Journals\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Journals\Views\Journals\Journals\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Journals\Views\Journals\Journals\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Journals\Views\Journals\Journals\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Journals\Views\Journals\Journals\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Journals\Views\Journals\Journals\_DetailsDelete.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <TypeScriptCompile Include="wwwroot\js\site.ts" />
     </ItemGroup>
 
 </Project>

@@ -173,4 +173,16 @@ FiveMinuteMindfulness ei kogu alla 13-aastastelt lastelt teadlikult isikut tuvas
     <data name="Journals" xml:space="preserve">
         <value>Päevikud</value>
     </data>
+    <data name="YourJournals" xml:space="preserve">
+        <value>Sinu Päevikud</value>
+    </data>
+    <data name="CreateJournal" xml:space="preserve">
+        <value>Loo Uus Päevik</value>
+    </data>
+    <data name="EditJournal" xml:space="preserve">
+        <value>Muuda Päevikut</value>
+    </data>
+    <data name="DeleteJournal" xml:space="preserve">
+        <value>Kustuta Päevik</value>
+    </data>
 </root>

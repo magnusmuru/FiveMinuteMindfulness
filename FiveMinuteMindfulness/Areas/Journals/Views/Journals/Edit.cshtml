@@ -1,0 +1,31 @@
+@model FiveMinuteMindfulness.Core.Dto.Application.JournalDto
+
+@{
+    ViewBag.Title = FiveMinuteMindfulness.Resources.Web.Common.EditJournal;
+    Layout = "_Layout";
+}
+
+@await Html.PartialAsync("_Sidebar", 9);
+<partial name="_BackgroundVectors" model="Model" xmlns="http://www.w3.org/1999/html"/>
+
+<div class="d-flex w-100 h-100">
+    <div class="w-100">
+        <div class="journal-content-container">
+            <h3>@FiveMinuteMindfulness.Resources.Web.Common.EditJournal</h3>
+            <form asp-action="Edit" class="journal-items">
+
+                <partial name="_CreateEdit" model="Model"/>
+
+                <input type="submit" value="@FiveMinuteMindfulness.Resources.Web.Common.EditJournal" class="btn btn-purple btn-bottom-align btn-purple-text"/>
+            </form>
+            <a class="btn btn-purple btn-bottom-align btn-purple-text" asp-route-id="@Model.Id" asp-action="Delete" style="border-color: red;">
+                @FiveMinuteMindfulness.Resources.Web.Common.DeleteJournal
+            </a>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+
+</div>

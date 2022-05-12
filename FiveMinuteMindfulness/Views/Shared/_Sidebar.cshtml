@@ -40,9 +40,9 @@
     }
     else
     {
-        <div class="sidebar-entry" role="button" onclick="window.location.href='journals-home.html'">
+        <a class="sidebar-entry" asp-area="Journals" asp-controller="Journals" asp-action="Index">
             <i class="fa-solid fa-book-open sidebar-icon"></i>
             <span class="text-roboto">@FiveMinuteMindfulness.Resources.Web.Common.Journals</span>
-        </div>
+        </a>
     }
 </div>

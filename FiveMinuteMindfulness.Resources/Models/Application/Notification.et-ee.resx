@@ -35,4 +35,10 @@
     <data name="SelectNotificationType" xml:space="preserve">
         <value>Vali Teavituse Tüüp</value>
     </data>
+    <data name="NotificationTime" xml:space="preserve">
+        <value>Teavituse Aeg</value>
+    </data>
+    <data name="NotificationTimeRequired" xml:space="preserve">
+        <value>Teavituse Aja väli on kohustuslik.</value>
+    </data>
 </root>

@@ -29,5 +29,6 @@ public class NotificationService : ServiceBase<Notification, NotificationDto>, I
         entity.NotificationType = entityDto.NotificationType;
         entity.Content = entityDto.Content;
         entity.UserId = entityDto.UserId;
+        entity.NotificationTime = entityDto.NotificationTime;
     }
 }

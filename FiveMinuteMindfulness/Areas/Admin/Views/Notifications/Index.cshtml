@@ -23,6 +23,9 @@
                 @Html.DisplayNameFor(model => model.User)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.NotificationTime)
+            </th>
+            <th>
                 @FiveMinuteMindfulness.Resources.Web.Common.Actions
             </th>
         </tr>
@@ -39,6 +42,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.User.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotificationTime)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">@FiveMinuteMindfulness.Resources.Web.Common.Edit</a> |
