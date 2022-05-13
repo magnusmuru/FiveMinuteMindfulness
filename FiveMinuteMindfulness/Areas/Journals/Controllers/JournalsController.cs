@@ -2,12 +2,14 @@ using FiveMinuteMindfulness.Core.Dto.Application;
 using FiveMinuteMindfulness.Core.Models;
 using FiveMinuteMindfulness.Services.Application.Interfaces;
 using FiveMinuteMindfulness.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiveMinuteMindfulness.Areas.Journals.Controllers;
 
 [Area("Journals")]
+[Authorize]
 public class JournalsController : Controller
 {
     private ILogger<JournalsController> _logger;

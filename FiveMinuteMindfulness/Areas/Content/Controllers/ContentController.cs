@@ -28,7 +28,6 @@ public class ContentController : Controller
         var sections = await _sectionService.FindSectionsWithAssignments();
         sections = sections.Where(x => x.Assignments.Any() && x.ChapterType is ChapterType.Audio or ChapterType.Video)
             .ToList();
-        sections.Reverse();
 
         return View(sections);
     }

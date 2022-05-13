@@ -9,8 +9,7 @@
     <div class="w-50">
         @if (Model.Theme != null)
         {
-            <img class="page-image" src="@Model.Theme.Url"
-                 alt="Pastel colored disks floating."/>
+            <img class="page-image" src="@Model.Theme.Url" alt=""/>
         }
         else
         {
@@ -27,7 +26,7 @@
                     foreach (var chapterDto in Model.Chapters)
 
                     {
-                        <p>@chapterDto.Description</p>
+                        @Html.Raw(chapterDto.Description)
                     }
                 }
                 else
